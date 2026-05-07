@@ -1,0 +1,144 @@
+---
+import Layout from '@/layouts/Layout.astro';
+
+const recomendaciones = [
+  {
+    category: 'Antes de hormigonar',
+    items: [
+      'Verificar que el encofrado esté limpio, mojado y correctamente apuntalado antes de la llegada del camión.',
+      'Asegurarse de que las armaduras tengan los recubrimientos correctos según planos estructurales.',
+      'Controlar las condiciones climáticas: no hormigonar con temperaturas menores a 5°C o mayores a 35°C sin medidas especiales.',
+      'Tener prevista la cantidad exacta de m³ para evitar desperdicios o faltantes.',
+      'Disponer de vibrador en buen estado para la compactación.',
+    ],
+  },
+  {
+    category: 'Durante la colada',
+    items: [
+      'Hormigonar en capas no mayores a 50 cm cuando se usa vibrador de aguja.',
+      'No agregar agua al camión en obra: altera la relación agua/cemento y reduce la resistencia final.',
+      'Vibrar el hormigón inmediatamente después de la colocación, sin sobrecompactar.',
+      'Evitar descargar el hormigón en una sola esquina del encofrado.',
+      'El tiempo máximo desde la salida de planta hasta la descarga completa no debe superar los 90 minutos.',
+    ],
+  },
+  {
+    category: 'Curado y post-colada',
+    items: [
+      'Iniciar el curado húmedo dentro de las 2-4 horas posteriores a la finalización de la colada.',
+      'Mantener húmeda la superficie durante un mínimo de 7 días para hormigones estándar.',
+      'Proteger de la exposición directa al sol y al viento durante las primeras 24 horas.',
+      'No cargar la estructura hasta alcanzar al menos el 70% de la resistencia especificada.',
+      'En climas cálidos, usar mantas de yute, arpillera o membranas de curado.',
+    ],
+  },
+  {
+    category: 'Control de calidad en obra',
+    items: [
+      'Solicitar siempre el remito con la designación del hormigón, relación A/C y fecha de producción.',
+      'Conservar los remitos: son documentación técnica de la obra.',
+      'Realizar probetas testigo para ensayos de resistencia si la obra lo requiere.',
+      'Verificar que el hormigón entregado corresponda al especificado en el remito.',
+      'Ante cualquier duda técnica, contactar a nuestro staff de ventas antes de la descarga.',
+    ],
+  },
+];
+---
+
+<Layout
+  title="Recomendaciones de Uso | Palumbo Hormigón"
+  description="Guía técnica para el correcto uso del hormigón elaborado en obra. Recomendaciones de Palumbo Hormigón para garantizar la calidad de tu estructura."
+>
+  <!-- Hero de página -->
+  <section class="bg-dark pt-32 pb-16 md:pt-40 md:pb-20">
+    <div class="section-container">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="block w-8 h-px bg-accent"></span>
+        <span class="text-xs font-bold tracking-[0.3em] uppercase text-accent">Guía Técnica</span>
+      </div>
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+        <div>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-light tracking-tight leading-tight text-balance mb-4">
+            Recomendaciones<br/>
+            <span class="text-accent">de Uso</span>
+          </h1>
+          <p class="text-base text-light/60 max-w-lg leading-relaxed">
+            Guía práctica para garantizar la calidad y resistencia de tu estructura.
+            Seguí estas recomendaciones para obtener el máximo rendimiento de nuestro hormigón.
+          </p>
+        </div>
+
+        <!-- Download PDF CTA -->
+        <div class="flex flex-col items-start md:items-end gap-3">
+          <a
+            href="/recomendaciones.pdf"
+            download
+            class="btn-primary"
+            aria-label="Descargar guía de recomendaciones en PDF"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+            Descargar PDF
+          </a>
+          <p class="text-xs text-light/30">Guía completa en formato PDF</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="section-padding bg-light">
+    <div class="section-container">
+
+      <div class="max-w-4xl mx-auto space-y-12">
+        {recomendaciones.map((section, si) => (
+          <div class="gsap-reveal">
+            <!-- Category header -->
+            <div class="flex items-center gap-4 mb-6">
+              <div class="flex items-center justify-center w-8 h-8 bg-accent text-dark font-black text-sm shrink-0">
+                {si + 1}
+              </div>
+              <h2 class="text-xl md:text-2xl font-black text-dark tracking-tight">
+                {section.category}
+              </h2>
+            </div>
+
+            <!-- Items list -->
+            <ul class="space-y-3 ml-12">
+              {section.items.map((item) => (
+                <li class="flex items-start gap-3">
+                  <span class="mt-1.5 block w-1.5 h-1.5 bg-accent shrink-0"></span>
+                  <p class="text-sm md:text-base text-muted leading-relaxed">{item}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      <!-- Bottom CTA -->
+      <div class="mt-16 max-w-4xl mx-auto">
+        <div class="bg-dark p-8 md:p-12 flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <div>
+            <p class="text-xs font-bold tracking-widest uppercase text-accent mb-2">¿Tenés dudas?</p>
+            <h3 class="text-xl font-black text-light">Hablá con nuestro equipo técnico</h3>
+            <p class="text-sm text-light/60 mt-1">Nuestros asesores te guían antes, durante y después de la obra.</p>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+            <a href="/recomendaciones.pdf" download class="btn-primary">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+              </svg>
+              Descargar PDF
+            </a>
+            <a href="/#contacto" class="btn-outline border-white/30 text-light hover:bg-white hover:text-dark">
+              Contactar
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</Layout>

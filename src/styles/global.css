@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --accent: #f7c915;
+  --dark: #111111;
+  --light: #ffffff;
+}
+
+@layer base {
+  html {
+    scroll-behavior: auto; /* Lenis handles smooth scrolling */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-light text-dark overflow-x-hidden;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  /* Lenis smooth scroll compatibility */
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  * {
+    @apply box-border;
+  }
+
+  ::selection {
+    background-color: #f7c915;
+    color: #111111;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-site mx-auto px-4 sm:px-6 lg:px-12 xl:px-16;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-black tracking-tight text-dark;
+  }
+
+  .section-subtitle {
+    @apply text-base md:text-lg text-muted font-normal leading-relaxed;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-accent text-dark font-bold px-6 py-3 text-sm uppercase tracking-widest transition-all duration-200 hover:bg-yellow-400 hover:scale-105 active:scale-100;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 border-2 border-dark text-dark font-bold px-6 py-3 text-sm uppercase tracking-widest transition-all duration-200 hover:bg-dark hover:text-light;
+  }
+
+  .card-base {
+    @apply bg-white border border-gray-100 transition-all duration-300;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* GSAP visibility helper — prevents flash before animations */
+.gsap-hidden {
+  opacity: 0;
+  transform: translateY(24px);
+}

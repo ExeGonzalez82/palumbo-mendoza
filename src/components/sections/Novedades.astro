@@ -1,0 +1,95 @@
+---
+const noticias = [
+  {
+    source: 'Los Andes',
+    date: 'Marzo 2025',
+    headline: 'Palumbo Hormigón amplía su capacidad de producción en Mendoza',
+    excerpt:
+      'La empresa mendocina inaugura una nueva línea de producción que incrementa su capacidad en un 30%, respondiendo al crecimiento del sector de la construcción provincial.',
+    tag: 'Empresa',
+    url: '#',
+  },
+  {
+    source: 'MDZ Online',
+    date: 'Enero 2025',
+    headline: 'Certificación ISO 9001 para empresa local de hormigón elaborado',
+    excerpt:
+      'Palumbo Hormigón obtuvo la renovación de su certificación ISO 9001, reafirmando su compromiso con los estándares de calidad internacionales en cada proceso productivo.',
+    tag: 'Calidad',
+    url: '#',
+  },
+  {
+    source: 'Diario Uno',
+    date: 'Noviembre 2024',
+    headline: 'El hormigón mendocino en grandes obras de infraestructura',
+    excerpt:
+      'Empresas locales como Palumbo participan activamente en los proyectos de obra pública provincial, aportando materiales certificados y logística eficiente.',
+    tag: 'Obra Pública',
+    url: '#',
+  },
+];
+---
+
+<section id="novedades" class="section-padding bg-light">
+  <div class="section-container">
+
+    <!-- Header -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+      <div>
+        <div class="flex items-center gap-3 mb-4 gsap-reveal">
+          <span class="block w-8 h-px bg-accent"></span>
+          <span class="text-xs font-bold tracking-[0.3em] uppercase text-accent">Prensa</span>
+        </div>
+        <h2 class="section-title gsap-reveal text-balance">En los Medios</h2>
+      </div>
+      <p class="section-subtitle max-w-xs gsap-reveal">
+        Lo que dicen los medios sobre Palumbo Hormigón.
+      </p>
+    </div>
+
+    <!-- Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {noticias.map((item, i) => (
+        <article
+          class="gsap-reveal group border border-gray-100 hover:border-accent/40 hover:shadow-lg transition-all duration-300 flex flex-col"
+          style={`transition-delay: ${i * 100}ms`}
+        >
+          <!-- Top bar with source -->
+          <div class="flex items-center justify-between px-6 py-4 border-b border-gray-100 bg-surface">
+            <span class="text-xs font-black tracking-widest uppercase text-dark">{item.source}</span>
+            <span class="text-xs font-medium text-muted">{item.date}</span>
+          </div>
+
+          <!-- Content -->
+          <div class="p-6 flex flex-col flex-1">
+            <!-- Tag -->
+            <span class="inline-block mb-3 text-[10px] font-bold tracking-widest uppercase bg-accent/15 text-dark px-2 py-0.5 self-start">
+              {item.tag}
+            </span>
+
+            <!-- Headline -->
+            <h3 class="text-base font-bold text-dark leading-snug mb-3 group-hover:text-accent transition-colors duration-200">
+              {item.headline}
+            </h3>
+
+            <!-- Excerpt -->
+            <p class="text-sm text-muted leading-relaxed flex-1">{item.excerpt}</p>
+
+            <!-- Link -->
+            <a
+              href={item.url}
+              class="mt-5 inline-flex items-center gap-1.5 text-xs font-bold tracking-widest uppercase text-dark hover:text-accent transition-colors duration-200 border-b border-transparent hover:border-accent pb-0.5"
+              aria-label={`Leer nota completa: ${item.headline}`}
+            >
+              Leer nota completa
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+
+  </div>
+</section>

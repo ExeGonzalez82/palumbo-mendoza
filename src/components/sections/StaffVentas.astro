@@ -1,0 +1,107 @@
+---
+const staff = [
+  {
+    name: 'Carlos Rodríguez',
+    position: 'Gerente Comercial',
+    phone: '+54 261 000-0001',
+    email: 'c.rodriguez@palumbo.com.ar',
+    zone: 'Zona Norte y Gran Mendoza',
+    initials: 'CR',
+  },
+  {
+    name: 'Laura Fernández',
+    position: 'Ejecutiva de Ventas',
+    phone: '+54 261 000-0002',
+    email: 'l.fernandez@palumbo.com.ar',
+    zone: 'Zona Sur y Luján de Cuyo',
+    initials: 'LF',
+  },
+  {
+    name: 'Martín Sosa',
+    position: 'Asesor Técnico Comercial',
+    phone: '+54 261 000-0003',
+    email: 'm.sosa@palumbo.com.ar',
+    zone: 'Zona Este y Valle de Uco',
+    initials: 'MS',
+  },
+  {
+    name: 'Ana Gómez',
+    position: 'Atención al Cliente',
+    phone: '+54 261 000-0004',
+    email: 'a.gomez@palumbo.com.ar',
+    zone: 'Coordinación y seguimiento',
+    initials: 'AG',
+  },
+];
+---
+
+<section id="staff" class="section-padding bg-dark">
+  <div class="section-container">
+
+    <!-- Header -->
+    <div class="mb-14">
+      <div class="flex items-center gap-3 mb-4 gsap-reveal">
+        <span class="block w-8 h-px bg-accent"></span>
+        <span class="text-xs font-bold tracking-[0.3em] uppercase text-accent">Equipo</span>
+      </div>
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+        <h2 class="section-title text-light gsap-reveal text-balance">
+          Staff de Ventas
+        </h2>
+        <p class="section-subtitle text-light/60 max-w-sm gsap-reveal text-balance">
+          Nuestro equipo está disponible para asesorarte en cada etapa de tu proyecto.
+        </p>
+      </div>
+    </div>
+
+    <!-- Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      {staff.map((person, i) => (
+        <div
+          class="gsap-reveal bg-white/5 border border-white/10 hover:border-accent/60 transition-all duration-300 group p-6"
+          style={`transition-delay: ${i * 80}ms`}
+        >
+          <!-- Avatar -->
+          <div class="w-14 h-14 bg-accent flex items-center justify-center mb-5 text-dark font-black text-lg tracking-tight">
+            {person.initials}
+          </div>
+
+          <!-- Info -->
+          <h3 class="text-base font-bold text-light mb-0.5">{person.name}</h3>
+          <p class="text-xs font-semibold text-accent tracking-wide uppercase mb-1">{person.position}</p>
+          <p class="text-xs text-light/40 mb-5">{person.zone}</p>
+
+          <!-- Divider -->
+          <div class="h-px bg-white/10 mb-5"></div>
+
+          <!-- Contact -->
+          <ul class="flex flex-col gap-2.5">
+            <li>
+              <a
+                href={`tel:${person.phone.replace(/\s|-/g, '')}`}
+                class="flex items-center gap-2 text-sm text-light/60 hover:text-accent transition-colors duration-200"
+              >
+                <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 8V5z"/>
+                </svg>
+                {person.phone}
+              </a>
+            </li>
+            <li>
+              <a
+                href={`mailto:${person.email}`}
+                class="flex items-center gap-2 text-sm text-light/60 hover:text-accent transition-colors duration-200 break-all"
+              >
+                <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+                {person.email}
+              </a>
+            </li>
+          </ul>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
