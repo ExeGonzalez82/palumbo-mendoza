@@ -1,4 +1,4 @@
-﻿@tailwind base;
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -82,7 +82,7 @@
   }
 }
 
-/* GSAP visibility helper â€” prevents flash before animations */
+/* GSAP visibility helper — prevents flash before animations */
 .gsap-hidden {
   opacity: 0;
   transform: translateY(24px);

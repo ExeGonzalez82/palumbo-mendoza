@@ -1,9 +1,8 @@
-﻿---
+---
 const navLinks = [
   { label: 'Empresa', href: '/#empresa' },
-  { label: 'HormigÃ³n', href: '/#hormigon' },
-  { label: 'Novedades', href: '/#novedades' },
-  { label: 'GalerÃ­a', href: '/#galeria' },
+  { label: 'Hormigón', href: '/#hormigon' },
+  { label: 'Galería', href: '/#galeria' },
   { label: 'Contacto', href: '/#contacto' },
 ];
 ---
@@ -15,19 +14,19 @@ const navLinks = [
   <div class="section-container">
     <div class="flex items-center justify-between h-16 md:h-20">
 
-      <!-- Logo â€” far left -->
-      <a href="/" aria-label="Palumbo HormigÃ³n - Inicio" class="flex items-center shrink-0">
+      <!-- Logo — far left -->
+      <a href="/" aria-label="Palumbo Hormigón - Inicio" class="flex items-center shrink-0">
         <img
           src="/palumbo_logo.svg"
-          alt="Palumbo HormigÃ³n"
+          alt="Palumbo Hormigón"
           class="h-9 md:h-11 w-auto"
           width="270"
           height="109"
         />
       </a>
 
-      <!-- Desktop nav â€” center -->
-      <nav class="hidden lg:flex items-center gap-7 xl:gap-8" aria-label="NavegaciÃ³n principal">
+      <!-- Desktop nav — center -->
+      <nav class="hidden lg:flex items-center gap-7 xl:gap-8" aria-label="Navegación principal">
         {
           navLinks.map((link) => (
             <a
@@ -42,11 +41,11 @@ const navLinks = [
           href="/#contacto"
           class="ml-2 bg-accent text-dark text-sm font-bold px-5 py-2.5 tracking-widest uppercase transition-all duration-200 hover:bg-yellow-300"
         >
-          CotizÃ¡
+          Cotizá
         </a>
       </nav>
 
-      <!-- Right side: ISO badge (desktop) / hamburger (mobile) â€” far right -->
+      <!-- Right side: ISO badge (desktop) / hamburger (mobile) — far right -->
       <div class="flex items-center gap-3 shrink-0">
         <a
           href="/certificado-iso9001.pdf"
@@ -58,7 +57,7 @@ const navLinks = [
         >
           <img
             src="/iso9001.svg"
-            alt="CertificaciÃ³n ISO 9001:2015"
+            alt="Certificación ISO 9001:2015"
             class="h-12 w-auto"
             width="193"
             height="67"
@@ -68,7 +67,7 @@ const navLinks = [
         <button
           id="menu-toggle"
           class="lg:hidden flex flex-col gap-1.5 p-2 group"
-          aria-label="Abrir menÃº"
+          aria-label="Abrir menú"
           aria-expanded="false"
           aria-controls="mobile-menu"
         >
@@ -86,7 +85,7 @@ const navLinks = [
     class="lg:hidden hidden bg-[#fafafa] border-t border-black/10"
     aria-hidden="true"
   >
-    <nav class="section-container py-6 flex flex-col gap-4" aria-label="MenÃº mÃ³vil">
+    <nav class="section-container py-6 flex flex-col gap-4" aria-label="Menú móvil">
       {
         navLinks.map((link) => (
           <a
@@ -101,7 +100,7 @@ const navLinks = [
         href="/#contacto"
         class="mt-2 inline-block bg-accent text-dark text-sm font-bold px-5 py-3 tracking-widest uppercase text-center"
       >
-        CotizÃ¡ ahora
+        Cotizá ahora
       </a>
       <a
         href="/certificado-iso9001.pdf"
@@ -112,7 +111,7 @@ const navLinks = [
       >
         <img
           src="/iso9001.svg"
-          alt="CertificaciÃ³n ISO 9001:2015"
+          alt="Certificación ISO 9001:2015"
           class="h-8 w-auto"
           width="193"
           height="67"
