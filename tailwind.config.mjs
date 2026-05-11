@@ -8,7 +8,7 @@ export default {
         dark: '#111111',
         light: '#ffffff',
         muted: '#6b7280',
-        surface: '#f5f5f4',
+        surface: '#fafafa',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
