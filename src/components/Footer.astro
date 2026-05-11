@@ -10,9 +10,9 @@ const navLinks = [
 const year = new Date().getFullYear();
 ---
 
-<footer class="bg-dark text-light">
+<footer class="bg-[#fafafa] text-dark border-t border-gray-200">
   <!-- Top bar -->
-  <div class="border-b border-white/10">
+  <div class="border-b border-gray-200">
     <div class="section-container py-12 md:py-16">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
 
@@ -20,14 +20,14 @@ const year = new Date().getFullYear();
         <div class="md:col-span-1">
           <a href="/" class="inline-block mb-5" aria-label="Palumbo Hormigón">
             <img
-              src="/palumbo_logo_white.svg"
+              src="/palumbo_logo.svg"
               alt="Palumbo Hormigón"
               class="h-10 w-auto"
               width="270"
               height="109"
             />
           </a>
-          <p class="text-sm text-light/60 leading-relaxed max-w-xs">
+          <p class="text-sm text-dark/60 leading-relaxed max-w-xs">
             Empresa de hormigón elaborado con sede en Mendoza, Argentina.
             Más de 30 años brindando calidad y confianza al sector de la construcción.
           </p>
@@ -37,12 +37,12 @@ const year = new Date().getFullYear();
             target="_blank"
             rel="noopener"
             aria-label="Ver certificado ISO 9001:2015"
-            class="mt-6 inline-flex items-center gap-2 border border-accent/40 px-3 py-1.5 hover:border-accent transition-colors duration-200"
+            class="mt-6 inline-flex items-center gap-2 border border-accent/50 px-3 py-1.5 hover:border-accent transition-colors duration-200"
           >
             <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
             </svg>
-            <span class="text-xs font-bold text-accent tracking-widest uppercase">ISO 9001:2015 Certificado</span>
+            <span class="text-xs font-bold text-dark tracking-widest uppercase">ISO 9001:2015 Certificado</span>
           </a>
 
           <!-- Redes sociales -->
@@ -52,7 +52,7 @@ const year = new Date().getFullYear();
               target="_blank"
               rel="noopener"
               aria-label="Facebook de Palumbo Hormigón"
-              class="text-light/40 hover:text-accent transition-colors duration-200"
+              class="text-dark/40 hover:text-accent transition-colors duration-200"
             >
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
@@ -63,13 +63,13 @@ const year = new Date().getFullYear();
 
         <!-- Nav column -->
         <div>
-          <h3 class="text-xs font-bold tracking-widest uppercase text-light/40 mb-5">Navegación</h3>
+          <h3 class="text-xs font-bold tracking-widest uppercase text-dark/40 mb-5">Navegación</h3>
           <ul class="flex flex-col gap-3">
             {navLinks.map((link) => (
               <li>
                 <a
                   href={link.href}
-                  class="text-sm text-light/70 hover:text-accent transition-colors duration-200"
+                  class="text-sm text-dark/70 hover:text-accent transition-colors duration-200"
                 >
                   {link.label}
                 </a>
@@ -80,26 +80,26 @@ const year = new Date().getFullYear();
 
         <!-- Contact column -->
         <div>
-          <h3 class="text-xs font-bold tracking-widest uppercase text-light/40 mb-5">Contacto</h3>
+          <h3 class="text-xs font-bold tracking-widest uppercase text-dark/40 mb-5">Contacto</h3>
           <ul class="flex flex-col gap-4">
             <li class="flex items-start gap-3">
               <svg class="w-4 h-4 text-accent mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
               </svg>
-              <span class="text-sm text-light/70 leading-snug">Acc. Sur - Lat. Este 8500<br/>Luján de Cuyo, Mendoza</span>
+              <span class="text-sm text-dark/70 leading-snug">Acc. Sur - Lat. Este 8500<br/>Luján de Cuyo, Mendoza</span>
             </li>
             <li class="flex items-center gap-3">
               <svg class="w-4 h-4 text-accent shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 8V5z"/>
               </svg>
-              <a href="tel:+542614361188" class="text-sm text-light/70 hover:text-accent transition-colors">+54 261 436-1188</a>
+              <a href="tel:+542614361188" class="text-sm text-dark/70 hover:text-accent transition-colors">+54 261 436-1188</a>
             </li>
             <li class="flex items-center gap-3">
               <svg class="w-4 h-4 text-accent shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
               </svg>
-              <a href="mailto:info@hormimac.com.ar" class="text-sm text-light/70 hover:text-accent transition-colors">info@hormimac.com.ar</a>
+              <a href="mailto:info@hormimac.com.ar" class="text-sm text-dark/70 hover:text-accent transition-colors">info@hormimac.com.ar</a>
             </li>
           </ul>
         </div>
@@ -111,10 +111,10 @@ const year = new Date().getFullYear();
   <!-- Bottom bar -->
   <div class="section-container py-5">
     <div class="flex flex-col sm:flex-row items-center justify-between gap-3">
-      <p class="text-xs text-light/40">
+      <p class="text-xs text-dark/40">
         &copy; {year} Palumbo Hormigón. Todos los derechos reservados.
       </p>
-      <p class="text-xs text-light/30">
+      <p class="text-xs text-dark/30">
         Mendoza, Argentina
       </p>
     </div>
