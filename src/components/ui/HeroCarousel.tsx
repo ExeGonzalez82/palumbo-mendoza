@@ -72,30 +72,17 @@ export default function HeroCarousel() {
   }, [emblaApi, stopAutoplay, startAutoplay]);
 
   return (
-    <div className="relative w-full h-full bg-white">
+    <div className="relative w-full h-full bg-[#f5f5f4]">
       {/* Viewport */}
       <div className="overflow-hidden w-full h-full" ref={emblaRef}>
         <div className="flex h-full">
           {slides.map((slide, i) => (
             <div
               key={i}
-              className="flex-none w-full h-full bg-white flex items-center relative overflow-hidden"
+              className="flex-none w-full h-full bg-[#f5f5f4] flex items-center relative overflow-hidden"
             >
               {/* Left yellow accent bar */}
               <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#f7c915]" />
-
-              {/* Background decorative label */}
-              <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-[15%] select-none pointer-events-none">
-                <span
-                  className="text-[22vw] font-black tracking-tighter leading-none text-black/[0.04]"
-                  aria-hidden="true"
-                >
-                  {slide.bgLabel}
-                </span>
-              </div>
-
-              {/* Bottom accent bar */}
-              <div className="absolute bottom-0 left-0 right-0 h-px bg-black/8" />
 
               <div className="section-container w-full relative z-10">
                 <div className="max-w-2xl xl:max-w-3xl">

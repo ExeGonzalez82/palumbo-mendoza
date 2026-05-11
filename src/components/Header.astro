@@ -10,7 +10,7 @@ const navLinks = [
 
 <header
   id="site-header"
-  class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-black/10 shadow-sm"
+  class="fixed top-0 left-0 right-0 z-50 bg-white transition-shadow duration-300"
 >
   <div class="section-container">
     <div class="flex items-center justify-between h-16 md:h-20">
@@ -123,8 +123,22 @@ const navLinks = [
 </header>
 
 <script>
+  const header = document.getElementById('site-header')!;
   const menuToggle = document.getElementById('menu-toggle')!;
   const mobileMenu = document.getElementById('mobile-menu')!;
+
+  // Borde y sombra solo cuando se scrollea
+  const onScroll = () => {
+    if (window.scrollY > 8) {
+      header.style.boxShadow = '0 1px 12px rgba(0,0,0,0.08)';
+      header.style.borderBottom = '1px solid rgba(0,0,0,0.08)';
+    } else {
+      header.style.boxShadow = '';
+      header.style.borderBottom = '';
+    }
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 
   menuToggle.addEventListener('click', () => {
     const isOpen = mobileMenu.classList.contains('hidden');
