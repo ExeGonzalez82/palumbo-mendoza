@@ -6,9 +6,9 @@ export default {
       colors: {
         accent: '#f7c915',
         dark: '#111111',
-        light: '#f5fafa',
+        light: '#fafafa',
         muted: '#6b7280',
-        surface: '#f5fafa',
+        surface: '#fafafa',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
