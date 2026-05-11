@@ -16,7 +16,7 @@ export default function HormigonCard({ type, label, description, specs, index }:
       viewport={{ once: true, margin: '-40px' }}
       transition={{ duration: 0.5, delay: (index % 3) * 0.08, ease: 'easeOut' }}
       whileHover={{ y: -4 }}
-      className="group relative bg-[#fafafa] border border-gray-100 hover:border-[#f7c915] hover:shadow-xl transition-all duration-300 cursor-default overflow-hidden"
+      className="group relative bg-white border border-gray-100 hover:border-[#f7c915] hover:shadow-xl transition-all duration-300 cursor-default overflow-hidden"
     >
       {/* Accent top stripe on hover */}
       <div className="absolute top-0 left-0 right-0 h-0.5 bg-[#f7c915] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
