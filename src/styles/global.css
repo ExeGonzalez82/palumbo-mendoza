@@ -16,7 +16,8 @@
   }
 
   body {
-    @apply bg-light text-dark overflow-x-hidden;
+    @apply text-dark overflow-x-hidden;
+    background-color: #fafafa;
     font-family: 'Inter', system-ui, sans-serif;
   }
 
@@ -70,7 +71,8 @@
   }
 
   .card-base {
-    @apply bg-white border border-gray-100 transition-all duration-300;
+    @apply border border-gray-100 transition-all duration-300;
+    background-color: #fafafa;
   }
 }
 

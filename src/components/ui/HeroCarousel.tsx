@@ -72,14 +72,14 @@ export default function HeroCarousel() {
   }, [emblaApi, stopAutoplay, startAutoplay]);
 
   return (
-    <div className="relative w-full h-full bg-[#f5f5f4]">
+    <div className="relative w-full h-full bg-[#fafafa]">
       {/* Viewport */}
       <div className="overflow-hidden w-full h-full" ref={emblaRef}>
         <div className="flex h-full">
           {slides.map((slide, i) => (
             <div
               key={i}
-              className="flex-none w-full h-full bg-[#f5f5f4] flex items-center relative overflow-hidden"
+              className="flex-none w-full h-full bg-[#fafafa] flex items-center relative overflow-hidden"
             >
               {/* Left yellow accent bar */}
               <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#f7c915]" />
