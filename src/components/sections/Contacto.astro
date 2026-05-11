@@ -1,7 +1,7 @@
 ---
 ---
 
-<section id="contacto" class="section-padding bg-dark">
+<section id="contacto" class="section-padding bg-[#fafafa]">
   <div class="section-container">
 
     <!-- Header -->
@@ -11,10 +11,10 @@
         <span class="text-xs font-bold tracking-[0.3em] uppercase text-accent">Contacto</span>
       </div>
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
-        <h2 class="section-title text-light gsap-reveal text-balance">
+        <h2 class="section-title gsap-reveal text-balance">
           Hablemos de tu Proyecto
         </h2>
-        <p class="section-subtitle text-light/60 max-w-sm gsap-reveal text-balance">
+        <p class="section-subtitle max-w-sm gsap-reveal text-balance">
           Completá el formulario y un asesor te contactará dentro de las 24 horas hábiles.
         </p>
       </div>
@@ -33,7 +33,7 @@
         >
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div>
-              <label for="nombre" class="block text-xs font-bold tracking-widest uppercase text-light/50 mb-2">
+              <label for="nombre" class="block text-xs font-bold tracking-widest uppercase text-dark/50 mb-2">
                 Nombre *
               </label>
               <input
@@ -41,19 +41,19 @@
                 id="nombre"
                 name="nombre"
                 required
-                class="w-full bg-white/5 border border-white/15 text-light placeholder-white/30 px-4 py-3 text-sm focus:outline-none focus:border-accent transition-colors duration-200"
+                class="w-full bg-white border border-gray-300 text-dark placeholder-gray-400 px-4 py-3 text-sm focus:outline-none focus:border-accent transition-colors duration-200"
                 placeholder="Juan Pérez"
               />
             </div>
             <div>
-              <label for="empresa-input" class="block text-xs font-bold tracking-widest uppercase text-light/50 mb-2">
+              <label for="empresa-input" class="block text-xs font-bold tracking-widest uppercase text-dark/50 mb-2">
                 Empresa
               </label>
               <input
                 type="text"
                 id="empresa-input"
                 name="empresa"
-                class="w-full bg-white/5 border border-white/15 text-light placeholder-white/30 px-4 py-3 text-sm focus:outline-none focus:border-accent transition-colors duration-200"
+                class="w-full bg-white border border-gray-300 text-dark placeholder-gray-400 px-4 py-3 text-sm focus:outline-none focus:border-accent transition-colors duration-200"
                 placeholder="Constructora XYZ"
               />
             </div>
@@ -61,7 +61,7 @@
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div>
-              <label for="email" class="block text-xs font-bold tracking-widest uppercase text-light/50 mb-2">
+              <label for="email" class="block text-xs font-bold tracking-widest uppercase text-dark/50 mb-2">
                 Email *
               </label>
               <input
@@ -69,46 +69,46 @@
                 id="email"
                 name="email"
                 required
-                class="w-full bg-white/5 border border-white/15 text-light placeholder-white/30 px-4 py-3 text-sm focus:outline-none focus:border-accent transition-colors duration-200"
+                class="w-full bg-white border border-gray-300 text-dark placeholder-gray-400 px-4 py-3 text-sm focus:outline-none focus:border-accent transition-colors duration-200"
                 placeholder="juan@ejemplo.com"
               />
             </div>
             <div>
-              <label for="telefono" class="block text-xs font-bold tracking-widest uppercase text-light/50 mb-2">
+              <label for="telefono" class="block text-xs font-bold tracking-widest uppercase text-dark/50 mb-2">
                 Teléfono
               </label>
               <input
                 type="tel"
                 id="telefono"
                 name="telefono"
-                class="w-full bg-white/5 border border-white/15 text-light placeholder-white/30 px-4 py-3 text-sm focus:outline-none focus:border-accent transition-colors duration-200"
+                class="w-full bg-white border border-gray-300 text-dark placeholder-gray-400 px-4 py-3 text-sm focus:outline-none focus:border-accent transition-colors duration-200"
                 placeholder="+54 261 000-0000"
               />
             </div>
           </div>
 
           <div>
-            <label for="tipo" class="block text-xs font-bold tracking-widest uppercase text-light/50 mb-2">
+            <label for="tipo" class="block text-xs font-bold tracking-widest uppercase text-dark/50 mb-2">
               Tipo de consulta *
             </label>
             <select
               id="tipo"
               name="tipo"
               required
-              class="w-full bg-white/5 border border-white/15 text-light px-4 py-3 text-sm focus:outline-none focus:border-accent transition-colors duration-200 appearance-none"
+              class="w-full bg-white border border-gray-300 text-dark px-4 py-3 text-sm focus:outline-none focus:border-accent transition-colors duration-200 appearance-none"
             >
-              <option value="" class="bg-dark" disabled selected>Seleccioná una opción</option>
-              <option value="cotizacion" class="bg-dark">Cotización de hormigón</option>
-              <option value="obra-residencial" class="bg-dark">Obra residencial</option>
-              <option value="obra-comercial" class="bg-dark">Obra comercial / industrial</option>
-              <option value="obra-publica" class="bg-dark">Obra pública</option>
-              <option value="especificaciones" class="bg-dark">Consulta técnica</option>
-              <option value="otro" class="bg-dark">Otro</option>
+              <option value="" disabled selected>Seleccioná una opción</option>
+              <option value="cotizacion" >Cotización de hormigón</option>
+              <option value="obra-residencial" >Obra residencial</option>
+              <option value="obra-comercial" >Obra comercial / industrial</option>
+              <option value="obra-publica" >Obra pública</option>
+              <option value="especificaciones" >Consulta técnica</option>
+              <option value="otro" >Otro</option>
             </select>
           </div>
 
           <div>
-            <label for="mensaje" class="block text-xs font-bold tracking-widest uppercase text-light/50 mb-2">
+            <label for="mensaje" class="block text-xs font-bold tracking-widest uppercase text-dark/50 mb-2">
               Mensaje *
             </label>
             <textarea
@@ -116,7 +116,7 @@
               name="mensaje"
               required
               rows="5"
-              class="w-full bg-white/5 border border-white/15 text-light placeholder-white/30 px-4 py-3 text-sm focus:outline-none focus:border-accent transition-colors duration-200 resize-none"
+              class="w-full bg-white border border-gray-300 text-dark placeholder-gray-400 px-4 py-3 text-sm focus:outline-none focus:border-accent transition-colors duration-200 resize-none"
               placeholder="Describí tu proyecto: tipo de obra, metros cúbicos estimados, fecha de hormigonado..."
             ></textarea>
           </div>
@@ -148,8 +148,8 @@
               </svg>
             </div>
             <div>
-              <p class="text-xs font-bold tracking-widest uppercase text-light/40 mb-1">Planta</p>
-              <p class="text-sm text-light/80 leading-relaxed">Acc. Sur - Lat. Este 8500<br/>Luján de Cuyo, Mendoza</p>
+              <p class="text-xs font-bold tracking-widest uppercase text-dark/40 mb-1">Planta</p>
+              <p class="text-sm text-dark/70 leading-relaxed">Acc. Sur - Lat. Este 8500<br/>Luján de Cuyo, Mendoza</p>
             </div>
           </div>
 
@@ -160,8 +160,8 @@
               </svg>
             </div>
             <div>
-              <p class="text-xs font-bold tracking-widest uppercase text-light/40 mb-1">Horarios</p>
-              <p class="text-sm text-light/80 leading-relaxed">Lunes a Viernes: 7:00 – 18:00<br/>Sábados: 7:00 – 13:00</p>
+              <p class="text-xs font-bold tracking-widest uppercase text-dark/40 mb-1">Horarios</p>
+              <p class="text-sm text-dark/70 leading-relaxed">Lunes a Viernes: 7:00 – 18:00<br/>Sábados: 7:00 – 13:00</p>
             </div>
           </div>
 
@@ -172,8 +172,8 @@
               </svg>
             </div>
             <div>
-              <p class="text-xs font-bold tracking-widest uppercase text-light/40 mb-1">Teléfono</p>
-              <a href="tel:+542614361188" class="text-sm text-light/80 hover:text-accent transition-colors">+54 261 436-1188</a>
+              <p class="text-xs font-bold tracking-widest uppercase text-dark/40 mb-1">Teléfono</p>
+              <a href="tel:+542614361188" class="text-sm text-dark/70 hover:text-accent transition-colors">+54 261 436-1188</a>
             </div>
           </div>
 
@@ -184,14 +184,14 @@
               </svg>
             </div>
             <div>
-              <p class="text-xs font-bold tracking-widest uppercase text-light/40 mb-1">Email</p>
-              <a href="mailto:info@hormimac.com.ar" class="text-sm text-light/80 hover:text-accent transition-colors break-all">info@hormimac.com.ar</a>
+              <p class="text-xs font-bold tracking-widest uppercase text-dark/40 mb-1">Email</p>
+              <a href="mailto:info@hormimac.com.ar" class="text-sm text-dark/70 hover:text-accent transition-colors break-all">info@hormimac.com.ar</a>
             </div>
           </div>
         </div>
 
         <!-- Google Maps embed -->
-        <div class="relative w-full h-52 overflow-hidden border border-white/10">
+        <div class="relative w-full h-52 overflow-hidden border border-gray-200">
           <iframe
             title="Ubicación Palumbo Hormigón"
             src="https://maps.google.com/maps?q=Palumbo+Hormig%C3%B3n,+Luj%C3%A1n+de+Cuyo,+Mendoza&output=embed&hl=es&z=16"
