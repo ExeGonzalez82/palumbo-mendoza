@@ -1,33 +1,33 @@
----
+﻿---
 const navLinks = [
   { label: 'Empresa', href: '/#empresa' },
-  { label: 'Hormigón', href: '/#hormigon' },
+  { label: 'HormigÃ³n', href: '/#hormigon' },
   { label: 'Novedades', href: '/#novedades' },
-  { label: 'Galería', href: '/#galeria' },
+  { label: 'GalerÃ­a', href: '/#galeria' },
   { label: 'Contacto', href: '/#contacto' },
 ];
 ---
 
 <header
   id="site-header"
-  class="fixed top-0 left-0 right-0 z-50 bg-[#fffcf0] transition-shadow duration-300"
+  class="fixed top-0 left-0 right-0 z-50 bg-[#f5fafa] transition-shadow duration-300"
 >
   <div class="section-container">
     <div class="flex items-center justify-between h-16 md:h-20">
 
-      <!-- Logo — far left -->
-      <a href="/" aria-label="Palumbo Hormigón - Inicio" class="flex items-center shrink-0">
+      <!-- Logo â€” far left -->
+      <a href="/" aria-label="Palumbo HormigÃ³n - Inicio" class="flex items-center shrink-0">
         <img
           src="/palumbo_logo.svg"
-          alt="Palumbo Hormigón"
+          alt="Palumbo HormigÃ³n"
           class="h-9 md:h-11 w-auto"
           width="270"
           height="109"
         />
       </a>
 
-      <!-- Desktop nav — center -->
-      <nav class="hidden lg:flex items-center gap-7 xl:gap-8" aria-label="Navegación principal">
+      <!-- Desktop nav â€” center -->
+      <nav class="hidden lg:flex items-center gap-7 xl:gap-8" aria-label="NavegaciÃ³n principal">
         {
           navLinks.map((link) => (
             <a
@@ -42,11 +42,11 @@ const navLinks = [
           href="/#contacto"
           class="ml-2 bg-accent text-dark text-sm font-bold px-5 py-2.5 tracking-widest uppercase transition-all duration-200 hover:bg-yellow-300"
         >
-          Cotizá
+          CotizÃ¡
         </a>
       </nav>
 
-      <!-- Right side: ISO badge (desktop) / hamburger (mobile) — far right -->
+      <!-- Right side: ISO badge (desktop) / hamburger (mobile) â€” far right -->
       <div class="flex items-center gap-3 shrink-0">
         <a
           href="/certificado-iso9001.pdf"
@@ -58,7 +58,7 @@ const navLinks = [
         >
           <img
             src="/iso9001.svg"
-            alt="Certificación ISO 9001:2015"
+            alt="CertificaciÃ³n ISO 9001:2015"
             class="h-12 w-auto"
             width="193"
             height="67"
@@ -68,7 +68,7 @@ const navLinks = [
         <button
           id="menu-toggle"
           class="lg:hidden flex flex-col gap-1.5 p-2 group"
-          aria-label="Abrir menú"
+          aria-label="Abrir menÃº"
           aria-expanded="false"
           aria-controls="mobile-menu"
         >
@@ -83,10 +83,10 @@ const navLinks = [
   <!-- Mobile menu -->
   <div
     id="mobile-menu"
-    class="lg:hidden hidden bg-[#fffcf0] border-t border-black/10"
+    class="lg:hidden hidden bg-[#f5fafa] border-t border-black/10"
     aria-hidden="true"
   >
-    <nav class="section-container py-6 flex flex-col gap-4" aria-label="Menú móvil">
+    <nav class="section-container py-6 flex flex-col gap-4" aria-label="MenÃº mÃ³vil">
       {
         navLinks.map((link) => (
           <a
@@ -101,7 +101,7 @@ const navLinks = [
         href="/#contacto"
         class="mt-2 inline-block bg-accent text-dark text-sm font-bold px-5 py-3 tracking-widest uppercase text-center"
       >
-        Cotizá ahora
+        CotizÃ¡ ahora
       </a>
       <a
         href="/certificado-iso9001.pdf"
@@ -112,7 +112,7 @@ const navLinks = [
       >
         <img
           src="/iso9001.svg"
-          alt="Certificación ISO 9001:2015"
+          alt="CertificaciÃ³n ISO 9001:2015"
           class="h-8 w-auto"
           width="193"
           height="67"

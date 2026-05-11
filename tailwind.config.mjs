@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+﻿/** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,ts,tsx}'],
   theme: {
@@ -6,9 +6,9 @@ export default {
       colors: {
         accent: '#f7c915',
         dark: '#111111',
-        light: '#fffcf0',
+        light: '#f5fafa',
         muted: '#6b7280',
-        surface: '#fffcf0',
+        surface: '#f5fafa',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],

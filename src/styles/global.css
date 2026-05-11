@@ -1,4 +1,4 @@
-@tailwind base;
+﻿@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -17,7 +17,7 @@
 
   body {
     @apply text-dark overflow-x-hidden;
-    background-color: #fffcf0;
+    background-color: #f5fafa;
     font-family: 'Inter', system-ui, sans-serif;
   }
 
@@ -72,7 +72,7 @@
 
   .card-base {
     @apply border border-gray-100 transition-all duration-300;
-    background-color: #fffcf0;
+    background-color: #f5fafa;
   }
 }
 
@@ -82,7 +82,7 @@
   }
 }
 
-/* GSAP visibility helper — prevents flash before animations */
+/* GSAP visibility helper â€” prevents flash before animations */
 .gsap-hidden {
   opacity: 0;
   transform: translateY(24px);

@@ -1,38 +1,38 @@
-import React, { useCallback, useEffect, useRef } from 'react';
+﻿import React, { useCallback, useEffect, useRef } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 
 const slides = [
   {
-    tagline: 'Hormigón Elaborado · Mendoza',
+    tagline: 'HormigÃ³n Elaborado Â· Mendoza',
     title: ['Calidad que', 'Resiste'],
     titleAccent: 'el Tiempo',
     subtitle:
-      'Más de 30 años construyendo la infraestructura de Mendoza con tecnología de vanguardia y control de calidad certificado ISO 9001:2015.',
-    cta: 'Conocé nuestros hormigones',
+      'MÃ¡s de 30 aÃ±os construyendo la infraestructura de Mendoza con tecnologÃ­a de vanguardia y control de calidad certificado ISO 9001:2015.',
+    cta: 'ConocÃ© nuestros hormigones',
     ctaHref: '/#hormigon',
-    accent: 'Confianza · Resistencia · Precisión',
+    accent: 'Confianza Â· Resistencia Â· PrecisiÃ³n',
     bgLabel: '+30',
   },
   {
-    tagline: 'Planta en Luján de Cuyo',
+    tagline: 'Planta en LujÃ¡n de Cuyo',
     title: ['Entrega en Obra', 'Puntual'],
     titleAccent: 'y Segura',
     subtitle:
-      'Flota propia de camiones mixer para garantizar la llegada del hormigón en el tiempo y condiciones que tu proyecto necesita.',
-    cta: 'Hablá con nuestro equipo',
+      'Flota propia de camiones mixer para garantizar la llegada del hormigÃ³n en el tiempo y condiciones que tu proyecto necesita.',
+    cta: 'HablÃ¡ con nuestro equipo',
     ctaHref: '/#contacto',
-    accent: 'Logística · Puntualidad · Servicio',
+    accent: 'LogÃ­stica Â· Puntualidad Â· Servicio',
     bgLabel: 'MZA',
   },
   {
-    tagline: 'H-8 a H-45 · Bombeado · Fibras',
+    tagline: 'H-8 a H-45 Â· Bombeado Â· Fibras',
     title: ['Soluciones para', 'Cada'],
     titleAccent: 'Estructura',
     subtitle:
-      'Desde fundaciones residenciales hasta grandes obras de infraestructura. Diseño de mezcla personalizado según las exigencias de tu proyecto.',
-    cta: 'Solicitá tu cotización',
+      'Desde fundaciones residenciales hasta grandes obras de infraestructura. DiseÃ±o de mezcla personalizado segÃºn las exigencias de tu proyecto.',
+    cta: 'SolicitÃ¡ tu cotizaciÃ³n',
     ctaHref: '/#contacto',
-    accent: 'ISO 9001:2015 · OAA Acreditado · Bureau Veritas',
+    accent: 'ISO 9001:2015 Â· OAA Acreditado Â· Bureau Veritas',
     bgLabel: 'H45',
   },
 ];
@@ -72,14 +72,14 @@ export default function HeroCarousel() {
   }, [emblaApi, stopAutoplay, startAutoplay]);
 
   return (
-    <div className="relative w-full h-full bg-[#fffcf0]">
+    <div className="relative w-full h-full bg-[#f5fafa]">
       {/* Viewport */}
       <div className="overflow-hidden w-full h-full" ref={emblaRef}>
         <div className="flex h-full">
           {slides.map((slide, i) => (
             <div
               key={i}
-              className="flex-none w-full h-full bg-[#fffcf0] flex items-center relative overflow-hidden"
+              className="flex-none w-full h-full bg-[#f5fafa] flex items-center relative overflow-hidden"
             >
               {/* Left yellow accent bar */}
               <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#f7c915]" />
