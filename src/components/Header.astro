@@ -2,7 +2,6 @@
 const navLinks = [
   { label: 'Empresa', href: '/#empresa' },
   { label: 'Hormigón', href: '/#hormigon' },
-  { label: 'Equipo', href: '/#staff' },
   { label: 'Novedades', href: '/#novedades' },
   { label: 'Galería', href: '/#galeria' },
   { label: 'Contacto', href: '/#contacto' },
@@ -16,7 +15,7 @@ const navLinks = [
   <div class="section-container">
     <div class="flex items-center justify-between h-16 md:h-20">
 
-      <!-- Logo -->
+      <!-- Logo — far left -->
       <a href="/" aria-label="Palumbo Hormigón - Inicio" class="flex items-center shrink-0">
         <img
           src="/palumbo_logo.svg"
@@ -27,7 +26,7 @@ const navLinks = [
         />
       </a>
 
-      <!-- Desktop nav -->
+      <!-- Desktop nav — center -->
       <nav class="hidden lg:flex items-center gap-7 xl:gap-8" aria-label="Navegación principal">
         {
           navLinks.map((link) => (
@@ -45,13 +44,17 @@ const navLinks = [
         >
           Cotizá
         </a>
+      </nav>
+
+      <!-- Right side: ISO badge (desktop) / hamburger (mobile) — far right -->
+      <div class="flex items-center gap-3 shrink-0">
         <a
           href="/certificado-iso9001.pdf"
           target="_blank"
           rel="noopener"
           aria-label="Ver certificado ISO 9001:2015"
           title="Ver certificado ISO 9001:2015"
-          class="ml-1 shrink-0 opacity-90 hover:opacity-100 transition-opacity duration-200"
+          class="hidden lg:block opacity-90 hover:opacity-100 transition-opacity duration-200"
         >
           <img
             src="/iso9001.svg"
@@ -61,20 +64,19 @@ const navLinks = [
             height="67"
           />
         </a>
-      </nav>
 
-      <!-- Mobile hamburger -->
-      <button
-        id="menu-toggle"
-        class="lg:hidden flex flex-col gap-1.5 p-2 group"
-        aria-label="Abrir menú"
-        aria-expanded="false"
-        aria-controls="mobile-menu"
-      >
-        <span class="block w-6 h-0.5 bg-dark transition-all duration-300 group-[.open]:rotate-45 group-[.open]:translate-y-2"></span>
-        <span class="block w-6 h-0.5 bg-dark transition-all duration-300 group-[.open]:opacity-0"></span>
-        <span class="block w-6 h-0.5 bg-dark transition-all duration-300 group-[.open]:-rotate-45 group-[.open]:-translate-y-2"></span>
-      </button>
+        <button
+          id="menu-toggle"
+          class="lg:hidden flex flex-col gap-1.5 p-2 group"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <span class="block w-6 h-0.5 bg-dark transition-all duration-300 group-[.open]:rotate-45 group-[.open]:translate-y-2"></span>
+          <span class="block w-6 h-0.5 bg-dark transition-all duration-300 group-[.open]:opacity-0"></span>
+          <span class="block w-6 h-0.5 bg-dark transition-all duration-300 group-[.open]:-rotate-45 group-[.open]:-translate-y-2"></span>
+        </button>
+      </div>
     </div>
   </div>
 
@@ -101,14 +103,20 @@ const navLinks = [
       >
         Cotizá ahora
       </a>
-      <a href="/certificado-iso9001.pdf" target="_blank" rel="noopener" aria-label="Ver certificado ISO 9001:2015">
-      <img
-        src="/iso9001.svg"
-        alt="Certificación ISO 9001:2015"
-        class="h-9 w-auto mt-2"
-        width="193"
-        height="67"
-      />
+      <a
+        href="/certificado-iso9001.pdf"
+        target="_blank"
+        rel="noopener"
+        aria-label="Ver certificado ISO 9001:2015"
+        class="mt-1"
+      >
+        <img
+          src="/iso9001.svg"
+          alt="Certificación ISO 9001:2015"
+          class="h-8 w-auto"
+          width="193"
+          height="67"
+        />
       </a>
     </nav>
   </div>

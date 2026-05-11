@@ -78,6 +78,21 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://palumbo-
 
       // Expose lenis globally for GSAP integration
       (window as Window & { lenis?: Lenis }).lenis = lenis;
+
+      // Smooth scroll para anchor links (#section y /#section)
+      document.querySelectorAll<HTMLAnchorElement>('a[href^="#"], a[href*="/#"]').forEach((anchor) => {
+        anchor.addEventListener('click', (e) => {
+          const href = anchor.getAttribute('href') ?? '';
+          const hashIndex = href.indexOf('#');
+          if (hashIndex === -1) return;
+          const hash = href.slice(hashIndex);
+          const target = document.querySelector(hash);
+          if (!target) return;
+          e.preventDefault();
+          const headerH = window.innerWidth >= 1024 ? 80 : 64;
+          lenis.scrollTo(target as HTMLElement, { offset: -headerH, duration: 1.4 });
+        });
+      });
     </script>
 
     <!-- GSAP ScrollTrigger initialization -->
