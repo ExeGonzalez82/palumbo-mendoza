@@ -119,7 +119,23 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://palumbo-
       const scrollTopBtn = document.getElementById('scroll-top')!;
       const waBtn = document.getElementById('whatsapp-btn')!;
       const floatingBtns = [scrollTopBtn, waBtn];
+
+      let footerVisible = false;
+      const footer = document.querySelector('footer');
+      if (footer) {
+        new IntersectionObserver(([entry]) => {
+          footerVisible = entry.isIntersecting;
+          floatingBtns.forEach(btn => {
+            if (footerVisible) {
+              btn.classList.add('opacity-0', 'translate-y-2', 'pointer-events-none');
+              btn.classList.remove('opacity-100', 'translate-y-0');
+            }
+          });
+        }, { threshold: 0.1 }).observe(footer);
+      }
+
       window.addEventListener('scroll', () => {
+        if (footerVisible) return;
         if (window.scrollY > 400) {
           floatingBtns.forEach(btn => {
             btn.classList.remove('opacity-0', 'translate-y-2', 'pointer-events-none');
