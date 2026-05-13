@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "WebFetch(domain:share.google)",
+      "WebFetch(domain:www.google.com)",
+      "WebFetch(domain:maps.google.com)",
+      "WebFetch(domain:www.premixsa.com.ar)",
+      "Bash(Copy-Item \"d:\\\\zen-x\\\\Proyectos\\\\palumbo-mendoza\\\\public\\\\HORMIMAC S.A. \\(OAA 9001-2015\\) CERTIFICATE AR-O238443 v02.pdf\" \"d:\\\\zen-x\\\\Proyectos\\\\palumbo-mendoza\\\\public\\\\certificado-iso9001.pdf\")",
+      "Bash(git commit *)",
+      "WebFetch(domain:mundoclubhouse.com)",
+      "Bash(python3 -c ' *)",
+      "Bash(git checkout *)"
+    ]
+  }
+}

@@ -3,5 +3,13 @@ import HeroCarousel from '@/components/ui/HeroCarousel';
 ---
 
 <section id="hero" class="relative w-full h-[calc(100vh-4rem)] md:h-[calc(100vh-5rem)] min-h-[520px] max-h-[960px]">
+  <!-- Description strip -->
+  <div class="absolute top-0 left-0 right-0 z-10 bg-black/30 border-b border-white/10 py-2">
+    <div class="section-container">
+      <p class="text-[11px] text-white/60 tracking-wide leading-tight">
+        Desarrollo, comercialización, elaboración y despacho de hormigones elaborados desde planta — Luján de Cuyo, Mendoza.
+      </p>
+    </div>
+  </div>
   <HeroCarousel client:load />
 </section>

@@ -25,7 +25,7 @@ const slides = [
     bgLabel: 'MZA',
   },
   {
-    tagline: 'H-8 a H-45 · Bombeado · Fibras',
+    tagline: 'H-8 a H-45',
     title: ['Soluciones para', 'Cada'],
     titleAccent: 'Estructura',
     subtitle:
@@ -44,7 +44,7 @@ export default function HeroCarousel() {
   const startAutoplay = useCallback(() => {
     autoplayRef.current = setInterval(() => {
       emblaApi?.scrollNext();
-    }, 5500);
+    }, 10000);
   }, [emblaApi]);
 
   const stopAutoplay = useCallback(() => {
@@ -133,7 +133,7 @@ export default function HeroCarousel() {
       <div className="absolute bottom-8 right-4 sm:right-8 lg:right-16 xl:right-20 flex gap-2 z-20">
         <button
           onClick={scrollPrev}
-          className="w-11 h-11 flex items-center justify-center border border-white/20 text-white/60 hover:bg-white hover:text-[#111111] hover:border-white transition-all duration-200"
+          className="w-11 h-11 flex items-center justify-center border border-white/20 text-white/60 hover:bg-[#f7c915] hover:text-[#111111] hover:border-[#f7c915] transition-all duration-200"
           aria-label="Slide anterior"
         >
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -151,11 +151,6 @@ export default function HeroCarousel() {
         </button>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20">
-        <span className="text-[10px] font-semibold tracking-[0.25em] uppercase text-white/30">Scroll</span>
-        <div className="w-px h-10 bg-gradient-to-b from-white/30 to-transparent" />
-      </div>
     </div>
   );
 }

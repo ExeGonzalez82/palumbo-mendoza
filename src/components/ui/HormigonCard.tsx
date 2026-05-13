@@ -41,12 +41,12 @@ export default function HormigonCard({ type, label, description, specs, index }:
         <h3 className="text-lg font-bold text-[#111111] mb-2 leading-tight">{label}</h3>
 
         {/* Description */}
-        <p className="text-sm text-gray-500 leading-relaxed mb-5">{description}</p>
+        <p className="text-sm text-gray-600 leading-relaxed mb-5">{description}</p>
 
         {/* Specs */}
         <ul className="flex flex-col gap-1.5">
           {specs.map((spec, i) => (
-            <li key={i} className="flex items-center gap-2 text-xs text-gray-400">
+            <li key={i} className="flex items-center gap-2 text-xs text-gray-500">
               <span className="block w-1.5 h-1.5 bg-[#f7c915] shrink-0" />
               {spec}
             </li>
