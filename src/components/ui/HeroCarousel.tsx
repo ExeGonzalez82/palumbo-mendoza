@@ -131,7 +131,7 @@ export default function HeroCarousel() {
       <div className="absolute bottom-8 right-4 sm:right-8 lg:right-16 xl:right-20 flex gap-2 z-20">
         <button
           onClick={scrollPrev}
-          className="w-11 h-11 flex items-center justify-center border border-[#111111]/20 text-white/50 hover:bg-[#f7c915] hover:text-[#111111] hover:border-[#f7c915] transition-all duration-200"
+          className="w-11 h-11 flex items-center justify-center border border-white/20 text-white/50 hover:bg-[#f7c915] hover:text-[#111111] hover:border-[#f7c915] transition-all duration-200"
           aria-label="Slide anterior"
         >
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -140,7 +140,7 @@ export default function HeroCarousel() {
         </button>
         <button
           onClick={scrollNext}
-          className="w-11 h-11 flex items-center justify-center border border-[#111111]/20 text-white/50 hover:bg-[#f7c915] hover:border-[#f7c915] hover:text-[#111111] transition-all duration-200"
+          className="w-11 h-11 flex items-center justify-center border border-white/20 text-white/50 hover:bg-[#f7c915] hover:border-[#f7c915] hover:text-[#111111] transition-all duration-200"
           aria-label="Siguiente slide"
         >
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
