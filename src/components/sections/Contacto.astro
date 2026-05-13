@@ -135,10 +135,8 @@
         </form>
       </div>
 
-      <!-- Info + Map column -->
-      <div class="lg:col-span-2 flex flex-col gap-8 gsap-reveal">
-
-        <!-- Contact info -->
+      <!-- Info column -->
+      <div class="lg:col-span-2 gsap-reveal">
         <div class="space-y-6">
           <div class="flex items-start gap-4">
             <svg class="w-5 h-5 text-dark/50 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -181,22 +179,21 @@
             </div>
           </div>
         </div>
-
-        <!-- Google Maps embed -->
-        <div class="relative w-full h-52 overflow-hidden border border-gray-200">
-          <iframe
-            title="Ubicación Palumbo Hormigón"
-            src="https://maps.google.com/maps?q=Palumbo+Hormig%C3%B3n,+Luj%C3%A1n+de+Cuyo,+Mendoza&output=embed&hl=es&z=16"
-            width="100%"
-            height="100%"
-            style="border:0;"
-            allowfullscreen
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
-
       </div>
+    </div>
+
+    <!-- Google Maps embed — full width -->
+    <div class="mt-12 w-full overflow-hidden border border-gray-200 gsap-reveal" style="height:360px;">
+      <iframe
+        title="Ubicación Palumbo Hormigón"
+        src="https://maps.google.com/maps?q=Palumbo+Hormig%C3%B3n,+Luj%C3%A1n+de+Cuyo,+Mendoza&output=embed&hl=es&z=16"
+        width="100%"
+        height="100%"
+        style="border:0;"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
     </div>
 
   </div>
