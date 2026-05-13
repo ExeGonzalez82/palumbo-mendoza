@@ -115,15 +115,15 @@ const year = new Date().getFullYear();
           <p class="text-xs font-bold tracking-widest uppercase text-dark/40 mb-1">Recursos Humanos</p>
           <p class="text-sm font-semibold text-dark">¿Querés trabajar con nosotros? Dejanos tu CV</p>
         </div>
-        <button
-          id="btn-enviar-cv"
+        <a
+          href="mailto:recursoshumanos@hormimac.com.ar?subject=CV%20-%20Postulaci%C3%B3n&body=Hola%2C%20me%20gustar%C3%ADa%20postularme.%20Adjunto%20mi%20CV."
           class="shrink-0 btn-primary !text-xs !px-5 !py-2.5"
         >
-          <svg class="w-4 h-4 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"/>
           </svg>
           Postulate
-        </button>
+        </a>
       </div>
     </div>
   </div>
@@ -148,8 +148,3 @@ const year = new Date().getFullYear();
   </div>
 </footer>
 
-<script>
-  document.getElementById('btn-enviar-cv')?.addEventListener('click', () => {
-    window.open('mailto:recursoshumanos@hormimac.com.ar?subject=CV%20-%20Postulaci%C3%B3n&body=Hola%2C%20me%20gustar%C3%ADa%20postularme.%20Adjunto%20mi%20CV.');
-  });
-</script>
