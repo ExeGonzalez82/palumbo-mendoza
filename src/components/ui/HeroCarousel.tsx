@@ -72,14 +72,14 @@ export default function HeroCarousel() {
   }, [emblaApi, stopAutoplay, startAutoplay]);
 
   return (
-    <div className="relative w-full h-full bg-white">
+    <div className="relative w-full h-full bg-[#111111]">
       {/* Viewport */}
       <div className="overflow-hidden w-full h-full" ref={emblaRef}>
         <div className="flex h-full">
           {slides.map((slide, i) => (
             <div
               key={i}
-              className="flex-none w-full h-full bg-white flex items-center relative overflow-hidden"
+              className="flex-none w-full h-full bg-[#111111] flex items-center relative overflow-hidden"
             >
               {/* Left yellow accent bar */}
               <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#f7c915]" />
@@ -89,13 +89,13 @@ export default function HeroCarousel() {
                   {/* Tagline */}
                   <div className="flex items-center gap-3 mb-7">
                     <span className="block w-8 h-0.5 bg-[#f7c915]" />
-                    <span className="text-xs font-bold tracking-[0.3em] uppercase text-[#111111]/50">
+                    <span className="text-xs font-bold tracking-[0.3em] uppercase text-white/50">
                       {slide.tagline}
                     </span>
                   </div>
 
                   {/* Title */}
-                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-[#111111] leading-[1.0] tracking-tight mb-2">
+                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.0] tracking-tight mb-2">
                     {slide.title.map((line, j) => (
                       <span key={j} className="block">{line}</span>
                     ))}
@@ -103,12 +103,12 @@ export default function HeroCarousel() {
                   </h1>
 
                   {/* Subtitle */}
-                  <p className="text-base md:text-lg text-[#111111]/55 leading-relaxed max-w-lg mt-7 mb-5">
+                  <p className="text-base md:text-lg text-white/55 leading-relaxed max-w-lg mt-7 mb-5">
                     {slide.subtitle}
                   </p>
 
                   {/* Accent keywords */}
-                  <p className="text-[11px] font-semibold tracking-[0.2em] text-[#111111]/30 uppercase mb-9">
+                  <p className="text-[11px] font-semibold tracking-[0.2em] text-white/30 uppercase mb-9">
                     {slide.accent}
                   </p>
 
@@ -133,7 +133,7 @@ export default function HeroCarousel() {
       <div className="absolute bottom-8 right-4 sm:right-8 lg:right-16 xl:right-20 flex gap-2 z-20">
         <button
           onClick={scrollPrev}
-          className="w-11 h-11 flex items-center justify-center border border-[#111111]/20 text-[#111111]/50 hover:bg-[#f7c915] hover:text-[#111111] hover:border-[#f7c915] transition-all duration-200"
+          className="w-11 h-11 flex items-center justify-center border border-[#111111]/20 text-white/50 hover:bg-[#f7c915] hover:text-[#111111] hover:border-[#f7c915] transition-all duration-200"
           aria-label="Slide anterior"
         >
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -142,7 +142,7 @@ export default function HeroCarousel() {
         </button>
         <button
           onClick={scrollNext}
-          className="w-11 h-11 flex items-center justify-center border border-[#111111]/20 text-[#111111]/50 hover:bg-[#f7c915] hover:border-[#f7c915] hover:text-[#111111] transition-all duration-200"
+          className="w-11 h-11 flex items-center justify-center border border-[#111111]/20 text-white/50 hover:bg-[#f7c915] hover:border-[#f7c915] hover:text-[#111111] transition-all duration-200"
           aria-label="Siguiente slide"
         >
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
