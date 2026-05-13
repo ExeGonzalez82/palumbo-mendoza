@@ -82,7 +82,7 @@ export default function HeroCarousel() {
               className="flex-none w-full h-full bg-[#111111] flex items-center relative overflow-hidden"
             >
               {/* Left yellow accent bar */}
-              <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#f7c915]" />
+              <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#f7c915] z-20" />
 
               <div className="section-container w-full relative z-10">
                 <div className="max-w-2xl xl:max-w-3xl">
