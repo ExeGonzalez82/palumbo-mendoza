@@ -115,7 +115,7 @@ export default function HeroCarousel() {
                   {/* CTA */}
                   <a
                     href={slide.ctaHref}
-                    className="hero-cta"
+                    className="btn-primary !px-7 !py-4 !gap-3"
                   >
                     {slide.cta}
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
