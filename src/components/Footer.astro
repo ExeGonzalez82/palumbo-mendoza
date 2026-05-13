@@ -108,12 +108,12 @@ const year = new Date().getFullYear();
   </div>
 
   <!-- Trabajá con nosotros -->
-  <div class="border-b border-gray-200">
+  <div class="bg-[#111111] border-b border-white/10">
     <div class="section-container py-8">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <p class="text-xs font-bold tracking-widest uppercase text-dark/40 mb-1">Recursos Humanos</p>
-          <p class="text-sm font-semibold text-dark">¿Querés trabajar con nosotros? Dejanos tu CV</p>
+          <p class="text-xs font-bold tracking-widest uppercase text-white/40 mb-1">Recursos Humanos</p>
+          <p class="text-sm font-semibold text-white">¿Querés trabajar con nosotros? Dejanos tu CV</p>
         </div>
         <a
           href="mailto:recursoshumanos@hormimac.com.ar?subject=CV%20-%20Postulaci%C3%B3n&body=Hola%2C%20me%20gustar%C3%ADa%20postularme.%20Adjunto%20mi%20CV."
@@ -129,21 +129,23 @@ const year = new Date().getFullYear();
   </div>
 
   <!-- Bottom bar -->
-  <div class="section-container py-5">
-    <div class="flex flex-col sm:flex-row items-center justify-between gap-3">
-      <p class="text-xs text-dark/40">
-        &copy; {year} Palumbo Hormigón. Todos los derechos reservados.
-      </p>
-      <a
-        href="https://exegonzalez.dev"
-        target="_blank"
-        rel="noopener"
-        class="flex items-center gap-1.5 text-xs text-dark/30 hover:text-dark transition-colors duration-200"
-        aria-label="Portfolio de Exequiel González"
-      >
-        <img src="/logoexe.svg" alt="" class="w-4 h-4" aria-hidden="true" />
-        <span>Diseño y desarrollo — exegonzalez.dev</span>
-      </a>
+  <div class="bg-[#111111]">
+    <div class="section-container py-5">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-3">
+        <p class="text-xs text-white/40">
+          &copy; {year} Palumbo Hormigón. Todos los derechos reservados.
+        </p>
+        <a
+          href="https://exegonzalez.dev"
+          target="_blank"
+          rel="noopener"
+          class="flex items-center gap-1.5 text-xs text-white/30 hover:text-white transition-colors duration-200"
+          aria-label="Portfolio de Exequiel González"
+        >
+          <img src="/logoexe.svg" alt="" class="w-4 h-4 invert" aria-hidden="true" />
+          <span>Diseño y desarrollo — exegonzalez.dev</span>
+        </a>
+      </div>
     </div>
   </div>
 </footer>
