@@ -4,8 +4,8 @@ import useEmblaCarousel from 'embla-carousel-react';
 const slides = [
   {
     tagline: 'Hormigón Elaborado · Mendoza',
-    title: ['Calidad que', 'Resiste'],
-    titleAccent: 'el Tiempo',
+    title: ['Calidad que', 'resiste'],
+    titleAccent: 'el tiempo',
     subtitle:
       'Más de 30 años construyendo la infraestructura de Mendoza con tecnología de vanguardia y control de calidad certificado ISO 9001:2015.',
     cta: 'Conocé nuestros hormigones',
@@ -15,8 +15,8 @@ const slides = [
   },
   {
     tagline: 'Planta en Luján de Cuyo',
-    title: ['Entrega en Obra', 'Puntual'],
-    titleAccent: 'y Segura',
+    title: ['Entrega en obra', 'puntual'],
+    titleAccent: 'y segura',
     subtitle:
       'Flota propia de camiones mixer para garantizar la llegada del hormigón en el tiempo y condiciones que tu proyecto necesita.',
     cta: 'Hablá con nuestro equipo',
@@ -26,8 +26,8 @@ const slides = [
   },
   {
     tagline: 'H-8 a H-45',
-    title: ['Soluciones para', 'Cada'],
-    titleAccent: 'Estructura',
+    title: ['Soluciones para', 'cada'],
+    titleAccent: 'estructura',
     subtitle:
       'Desde fundaciones residenciales hasta grandes obras de infraestructura. Diseño de mezcla personalizado según las exigencias de tu proyecto.',
     cta: 'Solicitá tu cotización',

@@ -18,7 +18,7 @@
   body {
     @apply text-dark overflow-x-hidden;
     background-color: #fafafa;
-    font-family: 'Barlow', system-ui, sans-serif;
+    font-family: 'Space Grotesk', system-ui, sans-serif;
   }
 
   /* Lenis smooth scroll compatibility */
