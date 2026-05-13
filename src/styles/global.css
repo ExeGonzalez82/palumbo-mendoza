@@ -65,7 +65,7 @@
   .btn-primary {
     @apply inline-flex items-center gap-2 font-bold px-6 py-3 text-sm uppercase tracking-widest overflow-hidden;
     background: linear-gradient(to right, #000000 50%, #f7c915 50%);
-    background-size: 200% 100%;
+    background-size: 205% 100%;
     background-position: right center;
     color: #111111;
     transition: background-position 0.35s ease, color 0.35s ease;
@@ -78,7 +78,7 @@
   .btn-outline {
     @apply inline-flex items-center gap-2 border-2 border-dark font-bold px-6 py-3 text-sm uppercase tracking-widest overflow-hidden;
     background: linear-gradient(to right, #000000 50%, transparent 50%);
-    background-size: 200% 100%;
+    background-size: 205% 100%;
     background-position: right center;
     color: #111111;
     transition: background-position 0.35s ease, color 0.35s ease;
