@@ -93,6 +93,25 @@
     background-color: #fafafa;
   }
 
+  /* Hero variant: same fill animation + yellow border on hover to stay visible on dark bg */
+  .hero-cta {
+    @apply inline-flex items-center font-bold uppercase tracking-widest overflow-hidden;
+    gap: 0.75rem;
+    padding: 1rem 1.75rem;
+    font-size: 0.875rem;
+    border: 2px solid transparent;
+    background: linear-gradient(to right, #111111 50%, #f7c915 50%);
+    background-size: 200% 100%;
+    background-position: right center;
+    color: #111111;
+    transition: background-position 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+  }
+  .hero-cta:hover {
+    background-position: left center;
+    color: #f7c915;
+    border-color: #f7c915;
+  }
+
 }
 
 @layer utilities {
