@@ -17,7 +17,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   try {
     await resend.emails.send({
       from: 'Palumbo Hormigón <noreply@palumbomza.com.ar>',
-      to: 'zen.exe@gmail.com',
+      to: 'info@hormimac.com.ar',
       replyTo: email,
       subject: `Nueva consulta web — ${nombre}`,
       html: `
