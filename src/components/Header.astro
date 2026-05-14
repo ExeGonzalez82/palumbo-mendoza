@@ -116,18 +116,20 @@ const navLinks = [
       navLinks.map((link) => (
         <a
           href={link.href}
-          class="drawer-link text-lg font-semibold text-white/70 hover:text-accent transition-colors duration-200 py-4 text-center"
+          class="drawer-link text-xl font-semibold text-white/80 hover:text-accent transition-colors duration-200 py-4"
         >
           {link.label}
         </a>
       ))
     }
-    <a
-      href="/#contacto"
-      class="drawer-link btn-primary w-full justify-center !text-[11px] !tracking-wide mt-6"
-    >
-      Solicitá presupuesto
-    </a>
+    <div class="mt-5 pt-5 border-t border-white/[0.08]">
+      <a
+        href="/#contacto"
+        class="drawer-link btn-primary w-full justify-center !text-[11px] !tracking-wide"
+      >
+        Solicitá presupuesto
+      </a>
+    </div>
   </nav>
 
   <!-- Bottom: ISO centrado + descripción -->
