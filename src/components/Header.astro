@@ -4,6 +4,7 @@ const navLinks = [
   { label: 'Hormigón', href: '/#hormigon' },
   { label: 'Galería', href: '/#galeria' },
   { label: 'Contacto', href: '/#contacto' },
+  { label: 'Recomendaciones', href: '/recomendaciones' },
 ];
 ---
 
@@ -11,7 +12,9 @@ const navLinks = [
   id="site-header"
   class="fixed top-0 left-0 right-0 z-50 bg-[#fafafa] transition-shadow duration-300"
 >
-  <div class="section-container">
+  <!-- Overlay oscuro que se activa cuando el drawer está abierto -->
+  <div id="header-overlay" class="absolute inset-0 bg-black/60 opacity-0 pointer-events-none transition-opacity duration-300 z-10"></div>
+  <div class="section-container relative z-20">
     <div class="flex items-center justify-between h-16 md:h-20">
 
       <!-- Logo — far left -->
@@ -151,6 +154,7 @@ const navLinks = [
 
 <script>
   const header = document.getElementById('site-header')!;
+  const headerOverlay = document.getElementById('header-overlay')!;
   const menuToggle = document.getElementById('menu-toggle')!;
   const overlay = document.getElementById('drawer-overlay')!;
   const drawer = document.getElementById('mobile-drawer')!;
@@ -176,6 +180,7 @@ const navLinks = [
     menuToggle.setAttribute('aria-expanded', 'true');
     menuToggle.classList.add('open');
     document.body.style.overflow = 'hidden';
+    headerOverlay.classList.remove('opacity-0');
   }
 
   function closeDrawer() {
@@ -186,6 +191,7 @@ const navLinks = [
     menuToggle.setAttribute('aria-expanded', 'false');
     menuToggle.classList.remove('open');
     document.body.style.overflow = '';
+    headerOverlay.classList.add('opacity-0');
   }
 
   menuToggle.addEventListener('click', openDrawer);
