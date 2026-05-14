@@ -27,10 +27,10 @@ const items = [
     </div>
 
     <!-- Grid -->
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+    <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
       {items.map((item) => (
         <button
-          class={`gsap-reveal relative group overflow-hidden ${item.aspect} ${item.span2 ? 'col-span-2' : ''} cursor-zoom-in`}
+          class={`gallery-item relative group overflow-hidden ${item.aspect} ${item.span2 ? 'col-span-2' : ''} cursor-zoom-in`}
           data-lightbox={item.src}
           aria-label="Ver imagen ampliada"
         >
@@ -71,6 +71,30 @@ const items = [
     class="max-w-full max-h-[90vh] object-contain shadow-2xl"
   />
 </div>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.fromTo(
+    '.gallery-item',
+    { opacity: 0, y: 40 },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 0.7,
+      ease: 'power3.out',
+      stagger: 0.1,
+      scrollTrigger: {
+        trigger: '#gallery-grid',
+        start: 'top 85%',
+        once: true,
+      },
+    }
+  );
+</script>
 
 <script>
   const lightbox = document.getElementById('lightbox')!;
