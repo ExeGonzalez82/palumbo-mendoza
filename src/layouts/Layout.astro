@@ -245,24 +245,23 @@ const ogImageURL = ogImage.startsWith('http') ? ogImage : `${siteBase}${ogImage}
           const target = parseInt(el.dataset.counter ?? '0', 10);
           const prefix = el.dataset.prefix ?? '';
           const formatK = el.dataset.formatK === 'true';
+          const obj = { val: 0 };
           ScrollTrigger.create({
             trigger: el,
             start: 'top 85%',
             once: true,
             onEnter: () => {
-              gsap.fromTo(
-                { val: 0 },
-                { val: target, duration: 1.6, ease: 'power2.out',
-                  onUpdate() {
-                    const v = Math.round((this as gsap.core.Tween).targets()[0].val);
-                    if (formatK) {
-                      el.textContent = prefix + v.toLocaleString('es-AR');
-                    } else {
-                      el.textContent = prefix + v;
-                    }
-                  },
-                }
-              );
+              gsap.to(obj, {
+                val: target,
+                duration: 1.6,
+                ease: 'power2.out',
+                onUpdate: () => {
+                  const v = Math.round(obj.val);
+                  el.textContent = formatK
+                    ? prefix + v.toLocaleString('es-AR')
+                    : prefix + v;
+                },
+              });
             },
           });
         });

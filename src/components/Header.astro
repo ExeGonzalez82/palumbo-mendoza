@@ -97,13 +97,12 @@ const navLinks = [
   role="dialog"
   aria-label="Menú de navegación"
 >
-  <!-- Drawer header -->
-  <div class="flex items-center justify-between px-6 py-5 border-b border-white/10">
-    <img src="/palumbo_logo_white.svg" alt="Palumbo Hormigón" class="h-7 w-auto" width="270" height="109" />
+  <!-- Close button -->
+  <div class="flex justify-end px-4 pt-4 pb-2">
     <button
       id="drawer-close"
       aria-label="Cerrar menú"
-      class="w-9 h-9 flex items-center justify-center text-white/50 hover:text-accent transition-colors duration-200"
+      class="w-9 h-9 flex items-center justify-center text-white/40 hover:text-accent transition-colors duration-200"
     >
       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -112,34 +111,38 @@ const navLinks = [
   </div>
 
   <!-- Nav links -->
-  <nav class="flex flex-col flex-1 px-6 py-8 gap-1" aria-label="Menú móvil">
+  <nav class="flex flex-col px-6 gap-0" aria-label="Menú móvil">
     {
       navLinks.map((link) => (
         <a
           href={link.href}
-          class="drawer-link text-base font-semibold text-white/70 hover:text-accent transition-colors duration-200 py-3 border-b border-white/5"
+          class="drawer-link text-base font-semibold text-white/70 hover:text-accent transition-colors duration-200 py-4 border-b border-white/8"
         >
           {link.label}
         </a>
       ))
     }
-    <a
-      href="/#contacto"
-      class="drawer-link mt-6 btn-primary justify-center"
-    >
-      Solicitá presupuesto
-    </a>
   </nav>
 
-  <!-- Drawer footer -->
-  <div class="px-6 py-5 border-t border-white/10">
+  <!-- Footer area: description + ISO + button -->
+  <div class="mt-auto px-6 pb-8 flex flex-col gap-5">
+    <div class="h-px bg-white/10"></div>
+    <p class="text-xs text-white/35 leading-relaxed">
+      Desarrollo, comercialización, elaboración y despacho de hormigones elaborados desde planta — Luján de Cuyo, Mendoza.
+    </p>
     <a
       href="/certificado-iso9001.pdf"
       target="_blank"
       rel="noopener"
       aria-label="Ver certificado ISO 9001:2015"
     >
-      <img src="/iso9001.svg" alt="Certificación ISO 9001:2015" class="h-7 w-auto opacity-70" width="193" height="67" />
+      <img src="/iso9001.svg" alt="Certificación ISO 9001:2015" class="h-11 w-auto opacity-75" width="193" height="67" />
+    </a>
+    <a
+      href="/#contacto"
+      class="drawer-link btn-primary w-full justify-center !text-[11px] !tracking-wide"
+    >
+      Solicitá presupuesto
     </a>
   </div>
 </div>
