@@ -4,13 +4,12 @@ const navLinks = [
   { label: 'Hormigón', href: '/#hormigon' },
   { label: 'Galería', href: '/#galeria' },
   { label: 'Contacto', href: '/#contacto' },
-  { label: 'Recomendaciones', href: '/recomendaciones' },
 ];
 ---
 
 <header
   id="site-header"
-  class="fixed top-0 left-0 right-0 z-50 bg-[#fafafa] transition-all duration-300"
+  class="fixed top-0 left-0 right-0 z-50 bg-[#fafafa] transition-shadow duration-300"
 >
   <div class="section-container">
     <div class="flex items-center justify-between h-16 md:h-20">
@@ -177,11 +176,6 @@ const navLinks = [
     menuToggle.setAttribute('aria-expanded', 'true');
     menuToggle.classList.add('open');
     document.body.style.overflow = 'hidden';
-    header.style.backgroundColor = '#111111';
-    header.style.boxShadow = 'none';
-    header.style.borderBottom = 'none';
-    // swap hamburger lines to white
-    header.querySelectorAll<HTMLSpanElement>('#menu-toggle span').forEach(s => s.style.backgroundColor = '#ffffff');
   }
 
   function closeDrawer() {
@@ -192,9 +186,6 @@ const navLinks = [
     menuToggle.setAttribute('aria-expanded', 'false');
     menuToggle.classList.remove('open');
     document.body.style.overflow = '';
-    header.style.backgroundColor = '';
-    header.querySelectorAll<HTMLSpanElement>('#menu-toggle span').forEach(s => s.style.backgroundColor = '');
-    onScroll();
   }
 
   menuToggle.addEventListener('click', openDrawer);
