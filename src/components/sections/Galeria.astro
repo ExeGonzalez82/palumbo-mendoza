@@ -29,7 +29,11 @@ const items = [
     <!-- Grid -->
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 gsap-reveal">
       {items.map((item) => (
-        <div class={`relative group overflow-hidden ${item.aspect} ${item.span2 ? 'col-span-2' : ''}`}>
+        <button
+          class={`relative group overflow-hidden ${item.aspect} ${item.span2 ? 'col-span-2' : ''} cursor-zoom-in`}
+          data-lightbox={item.src}
+          aria-label="Ver imagen ampliada"
+        >
           <img
             src={item.src}
             alt="Palumbo Hormigón"
@@ -38,9 +42,65 @@ const items = [
             decoding="async"
           />
           <div class="absolute inset-0 bg-dark/0 group-hover:bg-dark/30 transition-colors duration-300" />
-        </div>
+        </button>
       ))}
     </div>
 
   </div>
 </section>
+
+<!-- Lightbox -->
+<div
+  id="lightbox"
+  class="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 p-4"
+  aria-hidden="true"
+>
+  <button
+    id="lightbox-close"
+    aria-label="Cerrar"
+    class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center text-white/60 hover:text-white transition-colors"
+  >
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+    </svg>
+  </button>
+  <img
+    id="lightbox-img"
+    src=""
+    alt="Palumbo Hormigón"
+    class="max-w-full max-h-[90vh] object-contain shadow-2xl"
+  />
+</div>
+
+<script>
+  const lightbox = document.getElementById('lightbox')!;
+  const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
+  const lightboxClose = document.getElementById('lightbox-close')!;
+
+  function openLightbox(src: string) {
+    lightboxImg.src = src;
+    lightbox.classList.remove('opacity-0', 'pointer-events-none');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.add('opacity-0', 'pointer-events-none');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll<HTMLElement>('[data-lightbox]').forEach((btn) => {
+    btn.addEventListener('click', () => openLightbox(btn.dataset.lightbox!));
+  });
+
+  lightboxClose.addEventListener('click', closeLightbox);
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
