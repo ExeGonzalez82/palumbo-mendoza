@@ -224,16 +224,16 @@ const ogImageURL = ogImage.startsWith('http') ? ogImage : `${siteBase}${ogImage}
         groups.forEach((children, parent) => {
           gsap.fromTo(
             children,
-            { opacity: 0, y: 28 },
+            { opacity: 0, y: 16 },
             {
               opacity: 1,
               y: 0,
-              duration: 0.7,
+              duration: 0.55,
               ease: 'power3.out',
-              stagger: 0.13,
+              stagger: 0.1,
               scrollTrigger: {
                 trigger: parent,
-                start: 'top 92%',
+                start: 'top bottom',
                 once: true,
               },
             }
