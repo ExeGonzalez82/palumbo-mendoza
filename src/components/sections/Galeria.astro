@@ -73,30 +73,6 @@ const items = [
 </div>
 
 <script>
-  import { gsap } from 'gsap';
-  import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  gsap.fromTo(
-    '.gallery-item',
-    { opacity: 0, y: 40 },
-    {
-      opacity: 1,
-      y: 0,
-      duration: 0.7,
-      ease: 'power3.out',
-      stagger: 0.1,
-      scrollTrigger: {
-        trigger: '#gallery-grid',
-        start: 'top 85%',
-        once: true,
-      },
-    }
-  );
-</script>
-
-<script>
   const lightbox = document.getElementById('lightbox')!;
   const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
   const lightboxClose = document.getElementById('lightbox-close')!;

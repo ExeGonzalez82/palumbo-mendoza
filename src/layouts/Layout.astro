@@ -240,6 +240,27 @@ const ogImageURL = ogImage.startsWith('http') ? ogImage : `${siteBase}${ogImage}
           );
         });
 
+        // Gallery items — animación propia con y:40 y start top 85%
+        const galleryItems = gsap.utils.toArray<HTMLElement>('.gallery-item');
+        if (galleryItems.length) {
+          gsap.fromTo(
+            galleryItems,
+            { opacity: 0, y: 40 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.7,
+              ease: 'power3.out',
+              stagger: 0.1,
+              scrollTrigger: {
+                trigger: '#gallery-grid',
+                start: 'top 85%',
+                once: true,
+              },
+            }
+          );
+        }
+
         // Counter animation for stats
         document.querySelectorAll<HTMLElement>('[data-counter]').forEach((el) => {
           const target = parseInt(el.dataset.counter ?? '0', 10);
