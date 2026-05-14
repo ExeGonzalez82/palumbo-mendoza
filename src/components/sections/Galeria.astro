@@ -27,10 +27,10 @@ const items = [
     </div>
 
     <!-- Grid -->
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 gsap-reveal">
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
       {items.map((item) => (
         <button
-          class={`relative group overflow-hidden ${item.aspect} ${item.span2 ? 'col-span-2' : ''} cursor-zoom-in`}
+          class={`gsap-reveal relative group overflow-hidden ${item.aspect} ${item.span2 ? 'col-span-2' : ''} cursor-zoom-in`}
           data-lightbox={item.src}
           aria-label="Ver imagen ampliada"
         >
