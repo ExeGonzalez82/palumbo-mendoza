@@ -53,10 +53,14 @@ export default function HeroCarousel() {
 
   useEffect(() => {
     if (!emblaApi) return;
-    startAutoplay();
+    // Delay first autoplay so hero entrance animation completes first
+    const initialTimer = setTimeout(() => startAutoplay(), 2500);
     emblaApi.on('pointerDown', stopAutoplay);
     emblaApi.on('pointerUp', startAutoplay);
-    return () => stopAutoplay();
+    return () => {
+      clearTimeout(initialTimer);
+      stopAutoplay();
+    };
   }, [emblaApi, startAutoplay, stopAutoplay]);
 
   const scrollPrev = useCallback(() => {
@@ -83,7 +87,7 @@ export default function HeroCarousel() {
             >
 
               <div className="section-container w-full relative z-10">
-                <div className="max-w-2xl xl:max-w-3xl">
+                <div className={`max-w-2xl xl:max-w-3xl${i === 0 ? ' hero-slide-first' : ''}`}>
                   {/* Tagline */}
                   <div className="flex items-center gap-3 mb-7">
                     <span className="block w-8 h-0.5 bg-[#f7c915]" />
