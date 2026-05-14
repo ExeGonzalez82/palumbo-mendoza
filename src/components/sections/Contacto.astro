@@ -111,12 +111,6 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
               </svg>
             </button>
-            <p id="form-success" class="hidden text-sm text-green-600 font-medium">
-              ¡Mensaje enviado! Te contactamos a la brevedad.
-            </p>
-            <p id="form-error" class="hidden text-sm text-red-600 font-medium">
-              Hubo un error al enviar. Intentá de nuevo o escribinos a info@hormimac.com.ar
-            </p>
           </div>
         </form>
       </div>
@@ -143,20 +137,54 @@
 </section>
 
 <script>
+  function showToast(message: string, isError = false) {
+    const toast = document.createElement('div');
+    Object.assign(toast.style, {
+      position: 'fixed',
+      bottom: '1.5rem',
+      left: '50%',
+      transform: 'translateX(-50%) translateY(3rem)',
+      opacity: '0',
+      transition: 'transform 0.3s ease, opacity 0.3s ease',
+      background: '#111111',
+      color: isError ? '#f87171' : '#f7c915',
+      borderLeft: `3px solid ${isError ? '#f87171' : '#f7c915'}`,
+      padding: '1rem 1.5rem',
+      fontSize: '0.875rem',
+      fontWeight: '600',
+      letterSpacing: '0.02em',
+      zIndex: '9999',
+      boxShadow: '0 8px 32px rgba(0,0,0,0.4)',
+      whiteSpace: 'nowrap',
+      maxWidth: 'calc(100vw - 2rem)',
+    });
+    toast.textContent = message;
+    document.body.appendChild(toast);
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        toast.style.transform = 'translateX(-50%) translateY(0)';
+        toast.style.opacity = '1';
+      });
+    });
+
+    setTimeout(() => {
+      toast.style.transform = 'translateX(-50%) translateY(3rem)';
+      toast.style.opacity = '0';
+      setTimeout(() => toast.remove(), 300);
+    }, 4500);
+  }
+
   const form = document.getElementById('contact-form') as HTMLFormElement | null;
   const btn = document.getElementById('submit-btn') as HTMLButtonElement | null;
   const label = document.getElementById('submit-label') as HTMLElement | null;
-  const success = document.getElementById('form-success') as HTMLElement | null;
-  const error = document.getElementById('form-error') as HTMLElement | null;
 
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
-    if (!btn || !label || !success || !error) return;
+    if (!btn || !label) return;
 
     btn.disabled = true;
     label.textContent = 'Enviando...';
-    success.classList.add('hidden');
-    error.classList.add('hidden');
 
     const data = Object.fromEntries(new FormData(form));
 
@@ -168,13 +196,13 @@
       });
 
       if (res.ok) {
-        success.classList.remove('hidden');
+        showToast('¡Mensaje enviado! Te contactamos a la brevedad.');
         form.reset();
       } else {
-        error.classList.remove('hidden');
+        showToast('Hubo un error al enviar. Intentá de nuevo.', true);
       }
     } catch {
-      error.classList.remove('hidden');
+      showToast('Hubo un error al enviar. Intentá de nuevo.', true);
     } finally {
       btn.disabled = false;
       label.textContent = 'Enviar consulta';
