@@ -100,16 +100,23 @@
             ></textarea>
           </div>
 
-          <div>
+          <div class="flex flex-col gap-3">
             <button
               type="submit"
+              id="submit-btn"
               class="btn-primary w-full sm:w-auto justify-center"
             >
-              Enviar consulta
+              <span id="submit-label">Enviar consulta</span>
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
               </svg>
             </button>
+            <p id="form-success" class="hidden text-sm text-green-600 font-medium">
+              ¡Mensaje enviado! Te contactamos a la brevedad.
+            </p>
+            <p id="form-error" class="hidden text-sm text-red-600 font-medium">
+              Hubo un error al enviar. Intentá de nuevo o escribinos a info@hormimac.com.ar
+            </p>
           </div>
         </form>
       </div>
@@ -137,11 +144,40 @@
 
 <script>
   const form = document.getElementById('contact-form') as HTMLFormElement | null;
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      // TODO: integrate with backend / form service
-      console.log('Form submitted');
-    });
-  }
+  const btn = document.getElementById('submit-btn') as HTMLButtonElement | null;
+  const label = document.getElementById('submit-label') as HTMLElement | null;
+  const success = document.getElementById('form-success') as HTMLElement | null;
+  const error = document.getElementById('form-error') as HTMLElement | null;
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!btn || !label || !success || !error) return;
+
+    btn.disabled = true;
+    label.textContent = 'Enviando...';
+    success.classList.add('hidden');
+    error.classList.add('hidden');
+
+    const data = Object.fromEntries(new FormData(form));
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (res.ok) {
+        success.classList.remove('hidden');
+        form.reset();
+      } else {
+        error.classList.remove('hidden');
+      }
+    } catch {
+      error.classList.remove('hidden');
+    } finally {
+      btn.disabled = false;
+      label.textContent = 'Enviar consulta';
+    }
+  });
 </script>
