@@ -18,12 +18,12 @@ export default function HormigonCard({ type, label, description, specs, index }:
       viewport={{ once: true, margin: '-40px' }}
       transition={{ duration: 0.5, delay: (index % 3) * 0.08, ease: 'easeOut' }}
       whileHover={supportsHover ? { y: -4 } : undefined}
-      className="group relative bg-white border border-gray-300 hover:border-[#f7c915] hover:shadow-xl transition-all duration-300 cursor-default overflow-hidden"
+      className="group relative bg-white border border-gray-300 hover:border-[#f7c915] hover:shadow-xl transition-all duration-300 cursor-default overflow-hidden h-full flex flex-col"
     >
       {/* Accent top stripe on hover */}
       <div className="absolute top-0 left-0 right-0 h-0.5 bg-[#f7c915] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
 
-      <div className="p-6">
+      <div className="p-6 flex-1">
         {/* Type badge */}
         <div className="flex items-start justify-between mb-4">
           <span className="inline-block bg-[#111111] text-[#f7c915] text-xs font-black tracking-widest uppercase px-2.5 py-1">
@@ -56,12 +56,15 @@ export default function HormigonCard({ type, label, description, specs, index }:
         </ul>
       </div>
 
-      {/* Footer bar */}
-      <div className="px-6 py-3 bg-gray-50 group-hover:bg-[#f7c915]/10 transition-colors duration-300 border-t border-gray-100">
+      {/* Footer bar — links to contact */}
+      <a
+        href="/#contacto"
+        className="px-6 py-3 bg-gray-50 group-hover:bg-[#f7c915]/10 transition-colors duration-300 border-t border-gray-100 block"
+      >
         <span className="text-xs font-semibold text-gray-400 group-hover:text-[#111111] transition-colors duration-300 tracking-wide">
-          Consultá disponibilidad →
+          Consultá disponibilidad
         </span>
-      </div>
+      </a>
     </motion.div>
   );
 }
