@@ -1,8 +1,8 @@
 ---
 const stats = [
-  { value: '+30', label: 'Años en el mercado' },
-  { value: '+10.000', label: 'Clientes satisfechos' },
-  { value: '+50', label: 'Obras realizadas' },
+  { value: '+30', label: 'Años en el mercado', counter: 30, prefix: '+' },
+  { value: '+10.000', label: 'Clientes satisfechos', counter: 10000, prefix: '+', formatK: true },
+  { value: '+50', label: 'Obras realizadas', counter: 50, prefix: '+' },
   { value: 'ISO', label: '9001 Certificado' },
 ];
 ---
@@ -21,7 +21,7 @@ const stats = [
       <!-- Text column -->
       <div>
         <h2 class="section-title mb-6 gsap-reveal text-balance">
-          Tres décadas construyendo<br/>
+          Tres décadas construyendo
           <span class="text-accent">Mendoza</span>
         </h2>
 
@@ -67,8 +67,13 @@ const stats = [
       <!-- Stats column -->
       <div class="grid grid-cols-2 gap-4 gsap-reveal">
         {stats.map((stat) => (
-          <div class="bg-dark p-7 group hover:bg-accent transition-colors duration-300">
-            <p class="text-4xl font-black text-accent group-hover:text-dark transition-colors duration-300 mb-1">
+          <div class="bg-dark p-5 sm:p-7 group hover:bg-accent transition-colors duration-300">
+            <p
+              class="text-3xl sm:text-4xl font-black text-accent group-hover:text-dark transition-colors duration-300 mb-1"
+              data-counter={stat.counter}
+              data-prefix={stat.prefix}
+              data-format-k={stat.formatK}
+            >
               {stat.value}
             </p>
             <p class="text-sm font-medium text-light/70 group-hover:text-dark/70 transition-colors duration-300 leading-snug">

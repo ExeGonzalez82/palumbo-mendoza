@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@astrojs/react": "^4.0.0",
+    "@astrojs/sitemap": "^3.7.2",
     "@astrojs/tailwind": "^5.1.0",
     "astro": "^5.0.0",
     "embla-carousel": "^8.5.0",

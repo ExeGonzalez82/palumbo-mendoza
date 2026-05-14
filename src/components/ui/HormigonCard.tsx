@@ -8,6 +8,8 @@ interface HormigonCardProps {
   index: number;
 }
 
+const supportsHover = typeof window !== 'undefined' && window.matchMedia('(hover: hover)').matches;
+
 export default function HormigonCard({ type, label, description, specs, index }: HormigonCardProps) {
   return (
     <motion.div
@@ -15,7 +17,7 @@ export default function HormigonCard({ type, label, description, specs, index }:
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
       transition={{ duration: 0.5, delay: (index % 3) * 0.08, ease: 'easeOut' }}
-      whileHover={{ y: -4 }}
+      whileHover={supportsHover ? { y: -4 } : undefined}
       className="group relative bg-white border border-gray-300 hover:border-[#f7c915] hover:shadow-xl transition-all duration-300 cursor-default overflow-hidden"
     >
       {/* Accent top stripe on hover */}

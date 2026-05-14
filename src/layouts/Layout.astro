@@ -10,12 +10,14 @@ interface Props {
 }
 
 const {
-  title = 'Palumbo Hormigón | Mendoza',
-  description = 'Empresa de hormigón elaborado certificada ISO 9001 en Mendoza, Argentina. Más de 30 años de experiencia en el mercado mendocino.',
+  title = 'Palumbo Hormigón | Hormigón Elaborado en Mendoza',
+  description = 'Empresa de hormigón elaborado certificada ISO 9001 en Mendoza, Argentina. Más de 30 años produciendo hormigón de calidad en Luján de Cuyo.',
   ogImage = '/og-image.jpg',
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://palumbo-mendoza.com');
+const siteBase = Astro.site?.origin ?? 'https://palumbomza.com.ar';
+const canonicalURL = new URL(Astro.url.pathname, siteBase);
+const ogImageURL = ogImage.startsWith('http') ? ogImage : `${siteBase}${ogImage}`;
 ---
 
 <!doctype html>
@@ -27,21 +29,72 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://palumbo-
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href={canonicalURL} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#111111" />
+
+    <!-- Keywords & authorship -->
+    <meta name="keywords" content="hormigón elaborado Mendoza, hormigón premezclado, planta de hormigón Luján de Cuyo, Palumbo Hormigón, hormigón ISO 9001, H-8 H-13 H-17 H-20 H-25 H-30 H-35 H-40" />
+    <meta name="author" content="Palumbo Hormigón" />
+
+    <!-- Geo tags -->
+    <meta name="geo.region" content="AR-M" />
+    <meta name="geo.placename" content="Luján de Cuyo, Mendoza, Argentina" />
+    <meta name="geo.position" content="-33.0330;-68.8820" />
+    <meta name="ICBM" content="-33.0330, -68.8820" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={ogImage} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="es_AR" />
+    <meta property="og:site_name" content="Palumbo Hormigón" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
 
     <title>{title}</title>
+
+    <!-- Structured data — LocalBusiness -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Palumbo Hormigón",
+      "description": "Empresa de hormigón elaborado certificada ISO 9001:2015 en Mendoza, Argentina. Más de 30 años de trayectoria.",
+      "url": siteBase,
+      "logo": `${siteBase}/palumbo_logo.svg`,
+      "image": ogImageURL,
+      "telephone": "+542614361188",
+      "email": "info@hormimac.com.ar",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Acc. Sur - Lat. Este 8500",
+        "addressLocality": "Luján de Cuyo",
+        "addressRegion": "Mendoza",
+        "addressCountry": "AR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -33.0330,
+        "longitude": -68.8820
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "17:00"
+      },
+      "sameAs": ["https://www.facebook.com/palumbohormigon/"],
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "ISO 9001:2015"
+      }
+    })} />
 
     <!-- Google Fonts: Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -159,24 +212,59 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://palumbo-
 
       gsap.registerPlugin(ScrollTrigger);
 
-      // Animate elements with class .gsap-reveal
       document.addEventListener('DOMContentLoaded', () => {
-        gsap.utils.toArray<HTMLElement>('.gsap-reveal').forEach((el) => {
+        // Group .gsap-reveal elements by parent — stagger siblings together
+        const reveals = gsap.utils.toArray<HTMLElement>('.gsap-reveal');
+        const groups = new Map<Element, HTMLElement[]>();
+        reveals.forEach((el) => {
+          const parent = el.parentElement!;
+          if (!groups.has(parent)) groups.set(parent, []);
+          groups.get(parent)!.push(el);
+        });
+        groups.forEach((children, parent) => {
           gsap.fromTo(
-            el,
-            { opacity: 0, y: 32 },
+            children,
+            { opacity: 0, y: 28 },
             {
               opacity: 1,
               y: 0,
-              duration: 0.8,
+              duration: 0.7,
               ease: 'power3.out',
+              stagger: 0.13,
               scrollTrigger: {
-                trigger: el,
-                start: 'top 88%',
+                trigger: parent,
+                start: 'top 86%',
                 once: true,
               },
             }
           );
+        });
+
+        // Counter animation for stats
+        document.querySelectorAll<HTMLElement>('[data-counter]').forEach((el) => {
+          const target = parseInt(el.dataset.counter ?? '0', 10);
+          const prefix = el.dataset.prefix ?? '';
+          const formatK = el.dataset.formatK === 'true';
+          ScrollTrigger.create({
+            trigger: el,
+            start: 'top 85%',
+            once: true,
+            onEnter: () => {
+              gsap.fromTo(
+                { val: 0 },
+                { val: target, duration: 1.6, ease: 'power2.out',
+                  onUpdate() {
+                    const v = Math.round((this as gsap.core.Tween).targets()[0].val);
+                    if (formatK) {
+                      el.textContent = prefix + v.toLocaleString('es-AR');
+                    } else {
+                      el.textContent = prefix + v;
+                    }
+                  },
+                }
+              );
+            },
+          });
         });
       });
     </script>
