@@ -9,13 +9,13 @@
 
 ## Repositorio y Deploy
 - **GitHub:** https://github.com/ExeGonzalez82/palumbo-mendoza
-- **Rama de desarrollo:** `palumbo-redesign`
-- **Rama de producción:** `main`
+- **Rama de trabajo:** `palumbo-redesign` — siempre pushear acá
 - **Vercel team:** `exegonzalez82s-projects` (ID: `team_DCxlPpFenKnHvHtLNzVQsxuv`)
 - **Vercel project ID:** `prj_yo8YLokAl3kHPdBacXmcqp8Jfnd1`
-- **URL producción:** https://palumbo-mendoza.vercel.app
-- **URL preview (rama dev):** https://palumbo-mendoza-git-palumbo-redesign-exegonzalez82s-projects.vercel.app
-- **Deploy:** automático — cada push a `palumbo-redesign` → Vercel redeploya la preview
+- **URL producción:** https://palumbomza.com.ar
+- **Vercel alias:** https://palumbo-mendoza.vercel.app
+- **Deploy:** automático — cada push a `palumbo-redesign` → Vercel redeploya producción
+- **Nota:** Vercel tiene `palumbo-redesign` como rama de producción (no `main`). No pushear cambios a `main` directamente.
 
 ## Stack técnico
 | Tecnología | Uso |
@@ -27,6 +27,7 @@
 | Lenis 1 | Smooth scroll global |
 | Embla Carousel 8 | Carousel del Hero |
 | Framer Motion 11 | Micro-interacciones en cards |
+| Resend | Formulario de contacto (Vercel function) |
 | Vercel | Hosting + CI/CD |
 
 ## Paleta de colores
@@ -42,7 +43,7 @@
   3. `#hormigon` — 12 cards (H-8 a H-45, bombeado, fibras) con Framer Motion
   4. `#staff` — 4 tarjetas del equipo de ventas (fondo oscuro)
   5. `#novedades` — 3 cards "En los medios"
-  6. `#galeria` — Grid masonry (placeholders, faltan fotos reales)
+  6. `#galeria` — Grid masonry con 9 fotos reales WebP + lightbox
   7. `#contacto` — Formulario + mapa placeholder (fondo oscuro)
 - `/recomendaciones` — Guía técnica de uso + botón descarga PDF
 
@@ -84,8 +85,11 @@ src/
 ## Flujo de trabajo acordado
 1. Editar archivos en `d:\zen-x\Proyectos\palumbo-mendoza\`
 2. Claude hace el `git push` a `palumbo-redesign`
-3. Vercel redeploya automáticamente la preview URL
-4. El usuario revisa en la preview (no trabaja en local/localhost)
-5. Cuando el sitio esté listo: merge `palumbo-redesign` → `main` → producción
+3. Vercel redeploya automáticamente en producción
+4. El usuario revisa en https://palumbomza.com.ar
 
-## Pendientes — ver TODO.md
+## Estado del sitio (2026-05-15)
+- Sitio en producción con dominio `palumbomza.com.ar`
+- Google Search Console verificado + sitemap indexado
+- Formulario de contacto funcional con Resend
+- Galería con fotos reales
